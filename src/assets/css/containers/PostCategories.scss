@@ -1,0 +1,47 @@
+.PostCategories {
+  margin-right: -15px;
+  margin-bottom: 15px;
+
+  @media (max-width: 991px) {
+    padding: 16px;
+    margin-bottom: 1px;
+    margin-right: 0;
+    justify-content: space-between;
+  }
+
+  &-item {
+    position: relative;
+    font-size: 14px;
+    background: color(azure-radiance);
+    color: color(white);
+    text-align: center;
+    font-weight: 700;
+    border-radius: 5px;
+    margin: 0 15px 15px 0;
+    flex: 0 0 calc(25% - 15px);
+    max-width: calc(25% - 15px);
+    min-height: 48px;
+    text-transform: uppercase;
+    overflow: hidden;
+
+    @media (max-width: 991px) {
+      margin: 0 0 15px 0;
+      flex: 0 0 calc(100% / 2 - 7.5px);
+      max-width: calc(100% / 2 - 7.5px);
+    }
+
+    &::before {
+      position: absolute;
+      opacity: 0.2;
+      width: 58px;
+      height: 58px;
+      pointer-events: none;
+      content: '';
+      bottom: -15px;
+      left: -15px;
+      background: url('../images/favicon-neu.svg');
+      background-size: cover;
+      background-position: center;
+    }
+  }
+}

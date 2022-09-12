@@ -1,0 +1,23 @@
+//- const TPostBlockProps = {
+//-   className: string,
+//-   type: 'normal' | 'video',
+//-   layout: 'vertical' | 'horizontal',
+//-   title: string,
+//-   description: string,
+//-   subtitle: string,
+//- }
+
+mixin PostBlock({ className = '', type = 'normal', size = 'middle', layout = 'vertical', title, image, description, subtitle, link = '#' })
+  .PostBlock(class=`${className} ${type} ${layout} ${size}`)
+    .PostBlock-image 
+      a(href=`${link}`) 
+        img(src=`${image}`, alt="")
+
+      if type === 'video'
+        .PostBlock-image-video
+          img(src="./assets/icons/icon-play-red.svg", alt="")
+
+    .PostBlock-info 
+      a(href=`${link}`).PostBlock-info-title= title
+      .PostBlock-info-description= description
+      .PostBlock-info-subtitle= subtitle

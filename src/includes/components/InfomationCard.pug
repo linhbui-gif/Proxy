@@ -1,0 +1,7 @@
+mixin InfomationCard({ icon, title, description })
+  .InfomationCard
+    .InfomationCard-title= title 
+    .InfomationCard-description.flex.items-start 
+      .InfomationCard-icon 
+        img(src=`${icon}`, alt="")
+      = description

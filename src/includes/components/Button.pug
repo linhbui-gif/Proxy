@@ -1,0 +1,48 @@
+//- const TButtonProps = {
+//-   className?: string,
+//-   type?: 'button' | 'submit' | 'reset',
+//-   size?: 'small' | 'small-middle' | 'middle' | 'large',
+//-   styleType?: string,
+//-   title?: string,
+//-   reverse?: boolean,
+//-   link?: string,
+//-   iconImage?: string,
+//-   badge?: { label: string, styleType: string },
+//- }
+
+mixin Button({ className = '', type = 'button', size = 'middle',iconFont,classIcon, styleType = 'primary', iconImage, iconSvg, title, reverse, link, badge, classCustomButton, dataToggle, dataTarget } = {})
+  .Button(class=`${className} ${reverse ? 'reverse' : ''} ${size} ${styleType} ${!title && iconImage ? 'only-icon' : ''}`)
+    if link
+      a(href=`${link}` class=`${classCustomButton ? classCustomButton : ''}` data-toggle=`${dataToggle ? dataToggle : ''}` data-target=`${dataTarget ? dataTarget : ''} `).Button-control.flex.items-center.justify-center
+        if iconImage
+          .Button-control-icon 
+            img(src=`${iconImage}`, alt="")
+
+        .Button-control-title
+          = title
+          block title
+
+        if badge
+          .Button-badge.flex.items-center.justify-center(class=`${badge.styleType}`)= badge.label
+
+    else
+      button(type=`${type}` class=`${classCustomButton ? classCustomButton : ''}` data-toggle=`${dataToggle ? dataToggle : ''}` data-target=`${dataTarget ? dataTarget : ''}` ).Button-control.d-flex.align-items-center.justify-content-center
+        if iconImage
+          .Button-control-icon 
+            img(src=`${iconImage}`, alt="")
+
+        if iconSvg
+          .Button-control-icon 
+            if iconSvg === 'eye'
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_1335_9038)"><path class="fill" d="M7.71436 5.13867C7.43506 5.16406 7.15576 5.18945 6.90186 5.26562C7.02881 5.46875 7.07959 5.72266 7.10498 5.95117C7.10498 6.73828 6.44482 7.37305 5.68311 7.37305C5.4292 7.37305 5.17529 7.32227 4.99756 7.19531C4.92139 7.44922 4.87061 7.70312 4.87061 7.98242C4.87061 9.55664 6.14014 10.8262 7.71436 10.8262C9.28857 10.8262 10.5581 9.55664 10.5581 7.98242C10.5581 6.43359 9.28857 5.16406 7.71436 5.16406V5.13867ZM14.9253 7.62695C13.5542 4.93555 10.812 3.10742 7.71436 3.10742C4.59131 3.10742 1.84912 4.93555 0.478027 7.62695C0.427246 7.72852 0.401855 7.85547 0.401855 7.98242C0.401855 8.13477 0.427246 8.26172 0.478027 8.36328C1.84912 11.0547 4.59131 12.8574 7.71436 12.8574C10.812 12.8574 13.5542 11.0547 14.9253 8.36328C14.9761 8.26172 15.0015 8.13477 15.0015 8.00781C15.0015 7.85547 14.9761 7.72852 14.9253 7.62695ZM7.71436 11.6387C5.20068 11.6387 2.89014 10.2422 1.67139 7.98242C2.89014 5.72266 5.20068 4.32617 7.71436 4.32617C10.2026 4.32617 12.5132 5.72266 13.7319 7.98242C12.5132 10.2422 10.2026 11.6387 7.71436 11.6387Z" fill="white"/></g><defs><clipPath id="clip0_1335_9038"><rect width="15.4275" height="15.4275" fill="white" transform="translate(0.286133 0.286133)"/></clipPath></defs></svg>
+
+            if iconSvg === 'bin'
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path class="stroke" d="M3.88592 4.98003L4.3026 11.8126C4.34866 12.5596 4.97708 13.1422 5.73849 13.1422H10.0512C10.7959 13.1422 11.4175 12.5841 11.485 11.8551L12.1139 4.98003M3.88592 4.98003C3.26699 5.02242 2.85742 5.05568 2.85742 5.05568M3.88592 4.98003C4.973 4.90558 6.70592 4.80298 7.99992 4.80298C9.29392 4.80298 11.0268 4.90558 12.1139 4.98003M12.1139 4.98003C12.7328 5.02242 13.1424 5.05568 13.1424 5.05568" stroke="#828282" stroke-width="0.964218" stroke-linecap="round"/><path class="stroke" d="M6.45703 4.52526V3.82164C6.45703 3.28912 6.88873 2.85742 7.42125 2.85742H8.57831C9.11084 2.85742 9.54253 3.28912 9.54253 3.82164V4.52526" stroke="#828282" stroke-width="0.964218" stroke-linecap="round"/><path class="stroke" d="M5.94287 4.52515L6.97137 4.52515" stroke="#828282" stroke-width="0.964218" stroke-linecap="round"/><path class="stroke" d="M9.02832 4.52515H10.0568" stroke="#828282" stroke-width="0.964218" stroke-linecap="round"/><path class="stroke" d="M8 7.30493V10.6406" stroke="#828282" stroke-width="0.964218" stroke-linecap="round"/><path class="stroke" d="M5.94287 7.86084L5.94287 10.0846" stroke="#828282" stroke-width="0.964218" stroke-linecap="round"/><path class="stroke" d="M10.0571 7.86084L10.0571 10.0846" stroke="#828282" stroke-width="0.964218" stroke-linecap="round"/></svg>
+        if iconFont
+          i(class=`fa ${classIcon ? classIcon : ''}`)
+        .Button-control-title
+          = title
+          block title
+
+        if badge
+          .Button-badge.flex.items-center.justify-center(class=`${badge.styleType}`)= badge.label

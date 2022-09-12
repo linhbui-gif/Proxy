@@ -1,0 +1,113 @@
+extends includes/layouts/Layout.pug
+
+block pages
+    .buy-proxy.pt-4.pb-5
+        .container
+            h1.title-component-h1
+                | PRICES FOR PROXY
+            .list-country.mt-2
+                table.table.table-bordered.table-prices
+                    tbody
+                        tr
+                            th.table-active.text-center.font-weight-bold(colspan='100' style="font-size:2rem") IPv6 PROXY
+                        tr
+                            th(style="width:25%").text-center Country
+                            th(style="width:25%").text-center Count IP
+                            th(style="width:50%" colspan='4').text-center PRICE FOR ONE IP
+                        tr.table-active
+                            th(colspan=2)
+                            th(style="width:12.5%").text-center 3 days
+                            th(style="width:12.5%").text-center 1 week
+                            th(style="width:12.5%").text-center 2 weeks
+                            th(style="width:12.5%").text-center 1 month
+                            //td.small
+                            //    +CountryContainerList({isNumber: true,array: CountryList})
+                        each item in [1,2,3,4,5,6,7]
+                            tr
+                                td.text-center
+                                    +CountryContainerList({isNumber: false, className: 'custom-country-price',array: PriceCountryList})
+                                td.text-center.colum-text
+                                    b 1
+                                    |  &minus;
+                                    b 9
+                                td.text-center
+                                    | 0.064$
+                                td.text-center
+                                    | 0.12$
+                                td.text-center
+                                    | 0.225$
+                                td.text-center
+                                    | 0.45$
+                        tr
+                            td.text-center
+                                +CountryContainerList({
+                                    isNumber: false,
+                                    className: 'custom-country-price',
+                                    array: PriceCountryList
+                                })
+                            td.text-center.colum-text
+                                b 500
+                                |  &minus; &infin;
+                            td.text-center
+                                | 0.064$
+                            td.text-center
+                                | 0.12$
+                            td.text-center
+                                | 0.225$
+                            td.text-center
+                                | 0.45$
+            .list-country.mt-5
+                table.table.table-bordered.table-prices
+                    tbody
+                        tr
+                            th.table-active.text-center.font-weight-bold(colspan='100' style="font-size:2rem") IPv4 SHARED PROXY
+                        tr
+                            th(style="width:25%").text-center Country
+                            th(style="width:25%").text-center Count IP
+                            th(style="width:50%" colspan='4').text-center PRICE FOR ONE IP
+                        tr.table-active
+                            th(colspan=2)
+                            th(style="width:12.5%").text-center 3 days
+                            th(style="width:12.5%").text-center 1 week
+                            th(style="width:12.5%").text-center 2 weeks
+                            th(style="width:12.5%").text-center 1 month
+                            //td.small
+                            //    +CountryContainerList({isNumber: true,array: CountryList})
+                        each item in [1,2]
+                            tr
+                                td.text-center
+                                    +CountryContainerList({
+                                        isNumber: false,
+                                        className: 'custom-country-price',
+                                        array: PriceCountryList
+                                    })
+                                td.text-center.colum-text
+                                    b 1
+                                    |  &minus;
+                                    b 9
+                                td.text-center
+                                    | 0.064$
+                                td.text-center
+                                    | 0.12$
+                                td.text-center
+                                    | 0.225$
+                                td.text-center
+                                    | 0.45$
+                        tr
+                            td.text-center
+                                +CountryContainerList({
+                                    isNumber: false,
+                                    className: 'custom-country-price',
+                                    array: PriceCountryList
+                                })
+                            td.text-center.colum-text
+                                b 500
+                                |  &minus; &infin;
+                            td.text-center
+                                | 0.064$
+                            td.text-center
+                                | 0.12$
+                            td.text-center
+                                | 0.225$
+                            td.text-center
+                                | 0.45$

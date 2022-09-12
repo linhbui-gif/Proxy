@@ -1,0 +1,141 @@
+.PostBlock {
+  &.vertical {
+    .PostBlock {
+      &-image {
+        margin-bottom: 8px;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      &-info {
+        &-title {
+          font-size: 16px;
+          font-weight: 700;
+          color: color(mine-shaft);
+          @include ellipsis(2);
+        }
+
+        &-title,
+        &-description {
+          margin-bottom: 8px;
+        }
+
+        &-description {
+          @include ellipsis(4);
+        }
+      }
+    }
+  }
+
+  &.horizontal {
+    display: flex;
+    align-items: flex-start;
+
+    &.big {
+      .PostBlock {
+        &-image {
+          flex: 0 0 230px;
+          max-width: 230px;
+        }
+
+        &-info {
+          &-title,
+          &-description {
+            font-size: 14px;
+            margin-bottom: 8px;
+          }
+
+          &-description {
+            @include ellipsis(4);
+          }
+        }
+      }
+    }
+
+    .PostBlock {
+      &-image {
+        margin-right: 15px;
+        flex: 0 0 145px;
+        max-width: 145px;
+
+        @media (max-width: 991px) {
+          flex: 0 0 125px !important;
+          max-width: 125px !important;
+        }
+
+        &-video {
+          width: 32px;
+          height: 32px;
+        }
+      }
+
+      &-info {
+        &-title {
+          font-size: 13px;
+          font-weight: 500;
+          color: color(mine-shaft);
+        }
+
+        &-title,
+        &-description {
+          margin-bottom: 4px;
+          @include ellipsis(2);
+        }
+      }
+    }
+  }
+
+  &-image {
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    &-video {
+      position: absolute;
+      width: 56px;
+      height: 56px;
+      cursor: pointer;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      
+      @media (max-width: 991px) {
+        width: 32px;
+        height: 32px;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  &-info {
+    &-title {
+      display: block;
+      transition: $common-transition;
+
+      &:hover {
+        color: color(azure-radiance) !important;
+      }
+    }
+
+    &-description {
+      font-size: 13px;
+      color: color(emperor);
+    }
+
+    &-subtitle {
+      font-size: 12px;
+      color: color(pale-sky);
+    }
+
+  }
+}

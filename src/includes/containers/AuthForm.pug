@@ -1,0 +1,55 @@
+mixin AuthForm(type)
+  if type === 'forgot-password'
+    .AuthForm
+      .AuthForm-body
+        .AuthForm-title(style="margin-bottom: 28px") Lấy lại mật khẩu
+
+        form(action="#").AuthForm-form
+          .AuthForm-form-control
+            label.AuthForm-label Điền #[span.AuthForm-link email đã đăng ký của bạn] để lấy lại mật khẩu
+            +Input({ size: 'small-middle', styleType: 'gray', placeholder: 'Nhập địa chỉ email' })
+
+          .AuthForm-form-control
+            +Button({ size: 'small-middle', title: 'Lấy lại mật khẩu', styleType: 'primary' })
+
+  else
+    .AuthForm.tab-wrapper
+      .AuthForm-header.flex
+        .AuthForm-header-item.flex.items-center.justify-center.tab-item Tài khoản được cấp
+        .AuthForm-header-item.flex.items-center.justify-center.tab-item
+          |Email tổ chức
+          .AuthForm-header-item-platform
+            img(src="./assets/icons/icon-google.svg", alt="")
+          .AuthForm-header-item-platform
+            img(src="./assets/icons/icon-microsoft.svg", alt="")
+
+      .AuthForm-body.tab-main
+        .AuthForm-title Đăng nhập
+        .AuthForm-description Chào mừng bạn đến với thư viện VHMT Reader!
+
+        form(action="#").AuthForm-form
+          .AuthForm-form-control
+            label.AuthForm-label Email tài khoản
+            +Input({ size: 'small-middle', styleType: 'gray', placeholder: 'Nhập địa chỉ email' })
+          .AuthForm-form-control
+            label.AuthForm-label Mật khẩu
+            +Input({ size: 'small-middle', styleType: 'gray', placeholder: 'Nhập địa chỉ email', type: 'password' })
+
+          .AuthForm-form-control.flex.items-center.justify-between(style="padding: 0 8px")
+            +Checkbox({ label: 'Ghi nhớ mật khẩu', styleType: 'gray' })
+            a(href="#").AuthForm-link Bạn quên mật khẩu?
+
+          .AuthForm-form-control
+            +Button({ size: 'small-middle', title: 'Đăng nhập', styleType: 'primary' })
+
+      .AuthForm-body.tab-main
+        .AuthForm-title Đăng nhập
+        .AuthForm-description Chào mừng bạn đến với thư viện VHMT Reader!
+
+        .AuthForm-badge Lưu ý -  Chỉ chấp nhận các email có tên miền: @neu.edu.vn; @microsoft.com; @gmail.com
+
+        form(action="#").AuthForm-form
+          .AuthForm-form-control
+            +Button({ title: 'Đăng nhập với Microsoft', styleType: 'primary', iconImage: './assets/icons/icon-microsoft-circle.svg' })
+          .AuthForm-form-control
+            +Button({ title: 'Đăng nhập với Google', styleType: 'red', iconImage: './assets/icons/icon-google-circle.svg' })

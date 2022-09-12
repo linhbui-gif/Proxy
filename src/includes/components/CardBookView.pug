@@ -1,0 +1,20 @@
+//- const TCardBookViewProps = {
+//-   className?: string,
+//-   image: string,
+//-   title: string,
+//-   description: string,
+//-   rating: string,
+//- }
+
+mixin CardBookView({ className = '', image, title, description, rating })
+  a.CardBookView.flex.items-center(href="#" class=`${className}`)
+    .CardBookView-image 
+      img(src=`${image}`, alt="")
+
+    .CardBookView-info
+      .CardBookView-info-title= title
+      .CardBookView-info-description= description 
+      if rating 
+        .CardBookView-info-rating 
+          <svg width="57" height="45" viewBox="0 0 57 45" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M32.7852 0.403065C32.8198 0.402177 32.8545 0.401733 32.8891 0.401733V0.406983C34.2174 0.474177 35.516 1.1966 36.2043 2.58482L44.2127 18.8224L62.1305 21.4224C65.3437 21.8885 66.6314 25.8498 64.3013 28.1186L51.3382 40.7506L54.4042 58.5948C54.9561 61.7957 51.5834 64.2363 48.7136 62.7278L32.7867 54.3683L16.8599 62.7277C13.9902 64.2362 10.6175 61.7957 11.1694 58.5947L14.2354 40.7505L1.27231 28.1185C-1.05786 25.8497 0.229869 21.8884 3.44305 21.4223L21.3609 18.8224L29.3693 2.58474C30.0576 1.19652 31.3562 0.474097 32.6845 0.406903V0.401814C32.7181 0.401814 32.7516 0.402231 32.7852 0.403065Z" fill="#E0E0E0"/></svg>
+          span= rating

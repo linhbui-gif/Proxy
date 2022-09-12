@@ -1,0 +1,8 @@
+mixin ListGroupComponent( { className = '', type = '', styleLinkClass, isImage, array = [] } )
+    ul.list-item-group(class=`${className ? className : ''} ${type}`)
+        each item in array
+            li.list-item
+                if isImage
+                   img(src=`${item.src}` alt="")
+                else
+                   a(href=`${item.link}` class=`${styleLinkClass ? styleLinkClass : ''} list-item-link`)= item.title

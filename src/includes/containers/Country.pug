@@ -1,0 +1,11 @@
+mixin CountryContainerList({array = [], isNumber, className})
+    if isNumber
+        each item in array
+            div(class=`order-free-item ${className}`)
+                  .flag(title=`${item.title}` class=`${item.country}`)
+                  div
+                       span.label(class=`${item.status ? item.status : ''}`)=item.number
+    else
+        each item in array
+            div(class=`order-free-item ${className}`)
+                .flag(title=`${item.title}` class=`${item.country}`)

@@ -1,0 +1,47 @@
+extends includes/layouts/Layout.pug
+
+block pages
+    .proxy-checker.pt-5.pb-5
+        .container
+            h1.title-component-h1
+                | PROXY CHECKER
+            p.description-common
+                |Free online service for checking proxy. The analysis of each proxy on availability, type and the country.
+                br
+                | Verifiability of anonymous (personal) proxies with authorization on login and the password. Checking IPv6 proxy.
+            form.form-check-ip.mt-4
+                .row
+                    .col-lg-6.col-12
+                        .form-group
+                            textarea#exampleFormControlTextarea1.form-control(rows='10' placeholder="Proxy List").w-100
+                        .from-group.mt-4
+                            label.required Enter code:
+                            .form.form-captcha.d-flex
+                                span#captcha.mr-3
+                                    a(onclick='captchaReload();')
+                                        img(src='https://proxy6.net/captcha' alt="")
+                                input(type='tel' class="form-control form-control-lg col-3 col-lg-2 text-center" name='sec_code' placeholder='Code' spellcheck='false' maxlength='3' required='')
+                            .form-group.form-check.mt-3
+                                input#exampleCheck1.form-check-input(type='checkbox')
+                                label.form-check-label.font-weight-normal.ml-3(for='exampleCheck1') Detect proxy location
+                            +Button({ size: 'small-middle orange', className:"mt-3", title: 'Check Proxy' })
+                    .col-lg-6.col-12
+                        .alert-warning.custom-font-size.p-3
+                            | In what format to add a proxy in a proxy-cheker?
+                            br
+                            br
+                            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;If you have
+                            b public proxies
+                            |  (without login and password), then
+                            b IP:PORT
+                            br
+                            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;If you have
+                            b private proxies
+                            |  (with authorization on login and the password), then
+                            b IP:PORT:USER:PASS
+                            br
+                            br
+                            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;P.S.: If you have bought a proxy from us, then they are private!
+            .block-features.pl-4
+                b(style="font-size:1.5rem" class="mt-5 d-block mb-3 ") Features:
+                +ListGroupComponent({styleLinkClass: 'black', className:'list-style-disc pl-5', array: features })

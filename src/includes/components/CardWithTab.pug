@@ -1,0 +1,15 @@
+//- const TCardWithTabProps = {
+//-   className?: string,
+//-   title: string,
+//-   seeAll: boolean,
+//- }
+
+mixin CardWithTab({ className = '' })
+  .CardWithTab(class=`${className}`).tab-wrapper
+    .CardWithTab-header.flex.items-center
+      .CardWithTab-header-item.tab-item TÌM NHANH
+      .CardWithTab-header-item.tab-item CƠ BẢN
+      .CardWithTab-header-item.tab-item NÂNG CAO
+
+    .CardWithTab-body 
+      block content

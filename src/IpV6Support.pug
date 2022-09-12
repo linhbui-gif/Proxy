@@ -1,0 +1,21 @@
+extends includes/layouts/Layout.pug
+
+block pages
+    .website-ip-support
+        .container
+            h1.title-component-h1
+                | WEBSITE IPV6 SUPPORT CHECK
+            p.description-common With this service you can check any site for IPv6 access support.
+            form.form-check-ip.mt-4.col-12.col-lg-6.pl-0
+                .input-group.input-group-lg
+                    .input-group-prepend
+                        span#inputGroup-sizing-lg.input-group-text https://
+                    input.form-control(type='text' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-lg' placeholder="Example.com")
+                .from-group.mt-4
+                    label.required Enter code:
+                    .form.form-captcha.d-flex
+                        span#captcha.mr-3
+                            a(onclick='captchaReload();')
+                                img(src='https://proxy6.net/captcha' alt="")
+                        input(type='tel' class="form-control form-control-lg col-3 col-lg-2" name='sec_code' placeholder='Code' spellcheck='false' maxlength='3' required='')
+                    +Button({ size: 'small-middle orange', className:"mt-3", title: 'Check' })

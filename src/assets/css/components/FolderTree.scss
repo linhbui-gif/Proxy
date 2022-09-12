@@ -1,0 +1,179 @@
+.FolderTree {
+  &-title {
+    font-size: 14px;
+    font-weight: 700;
+    padding: 10px 0;
+    border-bottom: 1px solid color(mercury);
+  }
+
+  &-item {
+    &-label {
+      font-size: 13px;
+      color: color(mine-shaft);
+      transition: $common-transition;
+
+      &-icon {
+        flex: 0 0 24px;
+        max-width: 24px;
+        margin-right: 4px;
+
+        svg path {
+          transition: $common-transition;
+        }
+      }
+    }
+
+    &-badge {
+      background: color(ghost);
+      padding: 2px 4px;
+      border-radius: 3px;
+      font-size: 9px;
+      color: color(shark);
+      margin-left: 8px;
+      line-height: 1.2;
+    }
+  }
+
+  &-group {
+    &-item {
+      padding: 10px 0;
+      border-bottom: 1px solid color(mercury);
+
+      &:last-child {
+        border-color: color(cod-gray-alpha-05);
+      }
+
+      &-info {
+        margin-top: 5px;
+        flex: 1;
+      }
+
+      &-arrow {
+        flex: 0 0 20px;
+        max-width: 20px;
+        padding: 4px;
+        margin: 2px 0 0 8px;
+        cursor: pointer;
+
+        svg {
+          transform: rotate(-180deg);
+          transition: $common-transition;
+
+          path {
+            transition: $common-transition;
+          }
+        }
+      }
+
+      
+      &.active,
+      &:hover {
+        cursor: pointer;
+
+        &>.FolderTree-group-item-label {
+
+          .FolderTree {
+            &-item {
+              &-label {
+                color: color(azure-radiance);
+
+                &-icon {
+                  svg path {
+                    fill: color(azure-radiance);
+                  }
+                }
+              }
+            }
+
+            &-group {
+              &-item {
+                &-arrow {
+                  svg path {
+                    stroke: color(azure-radiance);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &.active {
+        .FolderTree {
+          &-group-item-arrow {
+            svg {
+              transform: rotate(0);
+            }
+          }
+          &-subItems {
+            max-height: 100vh;
+            padding-top: 10px;
+            overflow: auto;
+          }
+        }
+      }
+    }
+  }
+
+  &-subItems {
+    max-height: 0;
+    overflow: hidden;
+    transition: $common-transition;
+
+    &-item {
+      padding: 10px 0;
+      border-bottom: 1px solid color(mercury);
+      cursor: pointer;
+
+      &:hover {
+        .FolderTree {
+          &-subItems {
+            &-item {
+              &-icon {
+                svg path {
+                  stroke: color(azure-radiance);
+                }
+              }
+            }
+          }
+
+          &-item-label {
+            color: color(azure-radiance);
+          }
+        }
+      }
+
+      &:first-child {
+        border-top: 1px solid color(mercury);
+      }
+
+      &:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      &-icon {
+        flex: 0 0 24px;
+        max-width: 24px;
+        margin-right: 8px;
+
+        svg path {
+          transition: $common-transition;
+        }
+      }
+    }
+  }
+
+  &-see-more {
+    margin-top: 16px;
+    font-size: 14px;
+    cursor: pointer;
+    color: color(azure-radiance);
+
+    img {
+      flex: 0 0 26px;
+      max-width: 26px;
+      margin-left: 8px;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+.PostPage {
+  .CardWithTab,
+  .CardWithTitle {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+
+      @media (max-width: 991px) {
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  .CardInfo {
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+
+  &-pagination {
+    padding-top: 15px;
+    margin-top: 15px;
+    border-top: 1px solid var(--concrete);
+
+    @media (max-width: 991px) {
+      border: none;
+      margin: 0;
+    }
+  }
+
+  .layout-col {
+    @media (max-width: 991px) {
+      &:first-child {
+        margin-bottom: 16px;
+      }
+    }
+  }
+}

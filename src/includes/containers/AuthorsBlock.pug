@@ -1,0 +1,22 @@
+.AuthorsBlock.flex.items-center.flex-wrap
+  .AuthorsBlock-item
+    .AuthorsBlock-title Nhiều tác giả
+    .AuthorsBlock-authors.flex
+      +Avatar({ borderBlue: true, image: './assets/images/image-avatar.png', check: true })
+      +Avatar({ borderBlue: true, name: 'AB' })
+      +Avatar({ borderBlue: true, image: './assets/images/image-avatar.png' })
+      +Avatar({ borderBlue: true, name: 'T' })
+      +Avatar({ borderBlue: true, image: './assets/images/image-avatar.png' })
+      .Modal-open(data-modal="AuthorsModal")
+        +Avatar({ isHoverEffect: true, image: './assets/images/image-avatar-plus.png' })
+
+  .AuthorsBlock-item
+    .AuthorsBlock-title Được bán bởi:
+    .AuthorsBlock-saler.flex.items-center
+      .AuthorsBlock-saler-logo
+        img(src="./assets/images/favicon-nxb.svg", alt="")
+      .AuthorsBlock-saler-info
+        .AuthorsBlock-saler-info-title Nhà Xuất Bản xây dựng
+        .AuthorsBlock-saler-info-description.flex.items-center 
+          img(src="./assets/icons/icon-shield-check-green.svg", alt="")
+          |Nhà phát hành tin cậy

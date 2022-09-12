@@ -1,0 +1,178 @@
+
+<!--include ../containers/ProfileCard.pug-->
+<!--include ../containers/ProfileCardMobile.pug--><!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Buy proxy. Personal anonymous IPv4/IPv6 proxies / PROXY6.net</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/main.css">
+    <link rel="icon" type="image/png" href="https://proxy6.net/static/img/favicon.png">
+  </head>
+  <body>
+    <header class="Header">
+      <div class="container">
+        <div class="Header-top d-flex align-items-center flex-wrap">
+          <div class="Header-top-logo"><a class="logo" href="#">PROXY<span class="font-weight-bold">6</span>.net</a></div>
+          <div class="Header-top-list">
+            <ul class="list-item-group horizon">
+              <li class="list-item"><a class="orange text-uppercase list-item-link" href="BuyProxy.html">BUY PROXY</a>
+              </li>
+              <li class="list-item"><a class="orange text-uppercase list-item-link" href="Price.html">PRICES</a>
+              </li>
+              <li class="list-item"><a class="orange text-uppercase list-item-link" href="#">FAQ</a>
+              </li>
+              <li class="list-item"><a class="orange text-uppercase list-item-link" href="PartnerShip.html">Partnership program</a>
+              </li>
+            </ul>
+          </div>
+          <div class="Header-top-language mr-4">
+            <div class="btn-group"><a class="btn setlang_btn" href="/ru/faq"><span class="flag ru"></span></a><a class="btn setlang_btn active" href="/en/faq"><span class="flag us"></span></a></div>
+          </div>
+          <div class="Header-top-button d-flex">
+            <div class="Button mr-3 default small-middle primary">
+              <button class="Button-control d-flex align-items-center justify-content-center" type="button" data-toggle="" data-target=""><i class="fa fa-sign-out"></i>
+                <div class="Button-control-title">Sign In
+                </div>
+              </button>
+            </div>
+            <div class="Button small-middle orange primary">
+              <button class="Button-control d-flex align-items-center justify-content-center" type="button" data-toggle="" data-target="">
+                <div class="Button-control-title">Register
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <nav class="Navigation">
+      <div class="container">
+        <div class="Navigation-item">
+          <div class="button-bars"><i class="fa fa-bars"></i></div>
+          <ul class="list-item-group horizon">
+            <li class="list-item"><a class="list-item-link" href="ProxyChecker.html">Proxy checker</a>
+            </li>
+            <li class="list-item"><a class="list-item-link" href="#">My Ip</a>
+            </li>
+            <li class="list-item"><a class="list-item-link" href="#">My anonymity</a>
+            </li>
+            <li class="list-item"><a class="list-item-link" href="#">Blacklist</a>
+            </li>
+            <li class="list-item"><a class="list-item-link" href="#">Whois</a>
+            </li>
+            <li class="list-item"><a class="list-item-link" href="#">Ports scanner</a>
+            </li>
+            <li class="list-item"><a class="list-item-link" href="#">Website IPv6 support</a>
+            </li>
+            <li class="list-item"><a class="list-item-link" href="#">API</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div class="proxy-checker pt-5 pb-5">
+        <div class="container">
+          <h1 class="title-component-h1">PROXY CHECKER</h1>
+          <p class="description-common">Free online service for checking proxy. The analysis of each proxy on availability, type and the country.<br>Verifiability of anonymous (personal) proxies with authorization on login and the password. Checking IPv6 proxy.</p>
+          <form class="form-check-ip mt-4">
+            <div class="row">
+              <div class="col-lg-6 col-12">
+                <div class="form-group">
+                  <textarea class="form-control w-100" id="exampleFormControlTextarea1" rows="10" placeholder="Proxy List"></textarea>
+                </div>
+                <div class="from-group mt-4">
+                  <label class="required">Enter code:</label>
+                  <div class="form form-captcha d-flex"><span class="mr-3" id="captcha"><a onclick="captchaReload();"><img src="https://proxy6.net/captcha" alt=""></a></span>
+                    <input class="form-control form-control-lg col-3 col-lg-2 text-center" type="tel" name="sec_code" placeholder="Code" spellcheck="false" maxlength="3" required="">
+                  </div>
+                  <div class="form-group form-check mt-3">
+                    <input class="form-check-input" id="exampleCheck1" type="checkbox">
+                    <label class="form-check-label font-weight-normal ml-3" for="exampleCheck1">Detect proxy location</label>
+                  </div>
+                  <div class="Button mt-3 small-middle orange primary">
+                    <button class="Button-control d-flex align-items-center justify-content-center" type="button" data-toggle="" data-target="">
+                      <div class="Button-control-title">Check Proxy
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-12">
+                <div class="alert-warning custom-font-size p-3">In what format to add a proxy in a proxy-cheker?<br><br>&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;If you have<b>public proxies</b> (without login and password), then<b>IP:PORT</b><br>&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;If you have<b>private proxies</b> (with authorization on login and the password), then<b>IP:PORT:USER:PASS</b><br><br>&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;P.S.: If you have bought a proxy from us, then they are private!</div>
+              </div>
+            </div>
+          </form>
+          <div class="block-features pl-4"><b class="mt-5 d-block mb-3" style="font-size:1.5rem">Features:</b>
+            <ul class="list-item-group list-style-disc pl-5">
+              <li class="list-item"><a class="black list-item-link" href="#">Check IPv4 and IPv6 proxy availability</a>
+              </li>
+              <li class="list-item"><a class="black list-item-link" href="#">Check IPv4 and IPv6 proxy availability</a>
+              </li>
+              <li class="list-item"><a class="black list-item-link" href="#">Check IPv4 and IPv6 proxy availability</a>
+              </li>
+              <li class="list-item"><a class="black list-item-link" href="#">Check IPv4 and IPv6 proxy availability</a>
+              </li>
+              <li class="list-item"><a class="black list-item-link" href="#">Check IPv4 and IPv6 proxy availability</a>
+              </li>
+              <li class="list-item"><a class="black list-item-link" href="#">Check IPv4 and IPv6 proxy availability</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+    <ul class="list-item-group payment-method justify-content-center flex-wrap horizon">
+      <li class="list-item"><img src="https://proxy6.net/static/img/pay_ya.png" alt="">
+      </li>
+      <li class="list-item"><img src="https://proxy6.net/static/img/pay_ya.png" alt="">
+      </li>
+      <li class="list-item"><img src="https://proxy6.net/static/img/pay_ya.png" alt="">
+      </li>
+      <li class="list-item"><img src="https://proxy6.net/static/img/pay_ya.png" alt="">
+      </li>
+      <li class="list-item"><img src="https://proxy6.net/static/img/pay_ya.png" alt="">
+      </li>
+      <li class="list-item"><img src="https://proxy6.net/static/img/pay_ya.png" alt="">
+      </li>
+    </ul>
+    <footer class="Footer">
+      <div class="container">
+        <div class="Footer-bottom d-flex align-items-center">
+          <div class="Footer-bottom-logo"><a class="logo-black logo" href="#">PROXY<span class="font-weight-bold">6</span>.net</a>
+            <div class="Footer-bottom-text">Personal anonymous proxy HTTPs/SOCKS5<br>© 2016 – 2022 «PROXY6»</div>
+          </div>
+          <ul class="list-item-group horizon">
+            <li class="list-item"><a class="orange list-item-link" href="#">Proxy checker</a>
+            </li>
+            <li class="list-item"><a class="orange list-item-link" href="#">Prices</a>
+            </li>
+            <li class="list-item"><a class="orange list-item-link" href="#">FAQ</a>
+            </li>
+            <li class="list-item"><a class="orange list-item-link" href="#">Blog</a>
+            </li>
+            <li class="list-item"><a class="orange list-item-link" href="#">API</a>
+            </li>
+            <li class="list-item"><a class="orange list-item-link" href="#">Terms of use</a>
+            </li>
+            <li class="list-item"><a class="orange list-item-link" href="#">Contacts</a>
+            </li>
+          </ul>
+          <ul class="list-item-group info-contact">
+            <li class="list-item"><a class="list-item-link" href="#">support@proxy6.net</a>
+            </li>
+            <li class="list-item"><a class="list-item-link" href="#">+7(499)350-58-15</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>

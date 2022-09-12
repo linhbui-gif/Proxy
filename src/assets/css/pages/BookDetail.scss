@@ -1,0 +1,27 @@
+
+.BookDetail {
+  .CardWithTab,
+  .CardWithTitle {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+
+      @media (max-width: 991px) {
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  .CardInfo,
+  .CardBookView,
+  .ReaderBookView {
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+
+  .FolderTree {
+    &:not(:last-child) {
+      margin-bottom: 25px;
+    }
+  }
+}

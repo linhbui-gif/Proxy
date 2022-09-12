@@ -1,0 +1,10 @@
+mixin Breadcrumb({ data = [] })
+  .Breadcrumb.flex.flex-wrap 
+    each item, index in data
+      .Breadcrumb-item(class=`${index === data.length - 1 ? 'hightlight' : ''}`)
+        a(href=`${item.link}`)= item.title
+
+      if index < data.length - 1
+        .Breadcrumb-item.separator(class=`${index === data.length - 1 ? 'hightlight' : ''}`) /
+
+      

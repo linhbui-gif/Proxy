@@ -1,0 +1,14 @@
+footer.Footer
+    .container
+        .Footer-bottom.d-flex.align-items-center
+            .Footer-bottom-logo
+                a(href="#").logo-black.logo
+                    | PROXY
+                    span.font-weight-bold 6
+                    | .net
+                .Footer-bottom-text
+                    |Personal anonymous proxy HTTPs/SOCKS5
+                    br
+                    |© 2016 – 2022 «PROXY6»
+            +ListGroupComponent({ type: 'horizon', styleLinkClass: 'orange', array: dataFooter })
+            +ListGroupComponent({ className:'info-contact', type: '', array: [{ 'title': 'support@proxy6.net',link:'#' }, { 'title': '+7(499)350-58-15',link:'#' }] })

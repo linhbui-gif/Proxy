@@ -1,0 +1,76 @@
+.SearchAdvanced
+  .CardWithTab.tab-wrapper
+    .CardWithTab-header.flex.items-center
+      .CardWithTab-header-item.tab-item TÌM NHANH
+      .CardWithTab-header-item.tab-item CƠ BẢN
+      .CardWithTab-header-item.tab-item NÂNG CAO
+
+    .CardWithTab-body.padding
+      form(action="#").tab-main
+        .SearchAdvanced-item-row.flex.items-center.flex-wrap.justify-between
+          .SearchAdvanced-item-col.border
+            +Select({ placeholder: 'Chọn...', styleType: 'gray', size: 'small-middle' })
+          .SearchAdvanced-item-col.border.expand
+            +Input({ placeholder: 'Nhập từ khóa', size: 'small-middle' })
+          .SearchAdvanced-item-col
+            +Button({ title: 'Tìm kiếm', size: 'small-middle', iconImage: './assets/icons/icon-search-document-white.svg' })
+
+      form(action="#").tab-main
+        .SearchAdvanced-item-row.flex.items-center.flex-wrap.line-bottom
+          .SearchAdvanced-item-col
+            +Select({ placeholder: 'Mục lục thư viện', styleType: 'white', size: 'small-middle' })
+          .SearchAdvanced-item-col
+            +Select({ placeholder: 'Loại tài liệu', styleType: 'white', size: 'small-middle' })
+          .SearchAdvanced-item-col
+            +Checkbox({ label: 'Tìm không dấu' })
+
+        .SearchAdvanced-item-row.flex.items-center.flex-wrap.justify-between
+          each item in ['Nhan đề', 'Tác giả', 'Từ khóa', 'Phân loại', 'Năm xuất bản: Từ năm', 'Năm xuất bản: Đến năm', 'Số ĐKCB', 'ISBN/ISSN', 'ISBN/ISSN']
+            .SearchAdvanced-item-col.border.three.flex.items-center
+              +Input({ placeholder: item, size: 'small-middle' })
+              +Checkbox({})
+        
+        .SearchAdvanced-item-row.flex.items-center.flex-wrap.auto
+          .SearchAdvanced-item-col
+            +Button({ title: 'Tìm kiếm', size: 'small-middle', iconImage: './assets/icons/icon-search-document-white.svg' })
+          .SearchAdvanced-item-col
+            +Button({ title: 'Làm lại', size: 'small-middle', styleType: 'default', iconImage: './assets/icons/icon-redo-gray.svg' })
+
+      form(action="#").tab-main
+        .SearchAdvanced-item-row.flex.items-center.flex-wrap.line-bottom
+          .SearchAdvanced-item-col
+            +Select({ placeholder: 'Toàn bộ CSDL', styleType: 'white', size: 'small-middle' })
+          .SearchAdvanced-item-col
+            +Select({ placeholder: 'Loại tài liệu', styleType: 'white', size: 'small-middle' })
+          .SearchAdvanced-item-col
+            +Checkbox({ label: 'Tìm không dấu' })
+          .SearchAdvanced-item-col
+            +Checkbox({ label: 'Tìm chính xác' })
+
+        .SearchAdvanced-item-row.flex.items-center.flex-wrap.justify-between(style="padding-bottom: 0")
+          .SearchAdvanced-item-col.border
+            +Select({ placeholder: 'Chọn...', styleType: 'gray', size: 'small-middle' })
+          .SearchAdvanced-item-col.border.expand
+            +Input({ placeholder: 'Nhập từ khóa', size: 'small-middle' })
+          .SearchAdvanced-item-col
+            +Select({ placeholder: 'And', styleType: 'gray', size: 'small-middle' })
+        .SearchAdvanced-item-row.flex.items-center.flex-wrap.justify-between(style="padding-bottom: 0")
+          .SearchAdvanced-item-col.border
+            +Select({ placeholder: 'Chọn...', styleType: 'gray', size: 'small-middle' })
+          .SearchAdvanced-item-col.border.expand
+            +Input({ placeholder: 'Nhập từ khóa', size: 'small-middle' })
+          .SearchAdvanced-item-col
+            +Select({ placeholder: 'And', styleType: 'gray', size: 'small-middle' })
+        .SearchAdvanced-item-row.flex.items-center.flex-wrap.justify-between
+          .SearchAdvanced-item-col.border
+            +Select({ placeholder: 'Chọn...', styleType: 'gray', size: 'small-middle' })
+          .SearchAdvanced-item-col.border.expand
+            +Input({ placeholder: 'Nhập từ khóa', size: 'small-middle' })
+          .SearchAdvanced-item-col
+            +Select({ placeholder: 'And', styleType: 'gray', size: 'small-middle' })
+        
+        .SearchAdvanced-item-row.flex.items-center.flex-wrap.auto
+          .SearchAdvanced-item-col
+            +Button({ title: 'Tìm kiếm', size: 'small-middle', iconImage: './assets/icons/icon-search-document-white.svg' })
+          .SearchAdvanced-item-col
+            +Button({ title: 'Làm lại', size: 'small-middle', styleType: 'default', iconImage: './assets/icons/icon-redo-gray.svg' })

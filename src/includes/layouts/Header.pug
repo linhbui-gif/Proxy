@@ -1,0 +1,19 @@
+header.Header
+    .container
+        .Header-top.d-flex.align-items-center.flex-wrap
+            .Header-top-logo
+                a(href="#").logo
+                   |PROXY
+                   span.font-weight-bold 6
+                   | .net
+            .Header-top-list
+                +ListGroupComponent({ styleLinkClass: 'orange text-uppercase', type:'horizon ' ,array: dataListItemgroup})
+            .Header-top-language.mr-4
+                .btn-group
+                    a.btn.setlang_btn(href='/ru/faq')
+                        span.flag.ru
+                    a.btn.setlang_btn.active(href='/en/faq')
+                        span.flag.us
+            .Header-top-button.d-flex
+                +Button({ iconFont:true, classIcon:'fa-sign-out', className:'mr-3', size: 'default small-middle', title: 'Sign In' })
+                +Button({ size: 'small-middle orange', title: 'Register' })

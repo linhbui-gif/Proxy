@@ -1,0 +1,19 @@
+//- const TSelectProps = {
+//-   className: string,
+//-   type: 'text' | 'password',
+//-   size: 'small' | 'middle' | 'large',
+//-   styleType: 'white' | 'gray',
+//-   placeholder: string,
+//-   options: { label: string, value: string },
+//- }
+
+mixin Select({ className = '', size = 'middle', placeholder = '', options = [], styleType = 'white', reverse })
+  .Select(class=`${className} ${size} ${styleType} ${reverse ? 'reverse' : ''}`)
+    select.single-select2(data-placeholder=`${placeholder}`)
+      option
+      if !options || options.length === 0
+        each item in [{ label: `${placeholder} 1`, value: 1 }, { label: `${placeholder} 2`, value: 2 }, { label: `${placeholder} 3`, value: 3 }]
+          option(value=`${item.value}`)= item.label
+      else
+        each item in options
+          option(value=`${item.value}`)= item.label

@@ -1,0 +1,15 @@
+#AuthorsModal.AuthorsModal.Modal
+  .AuthorsModal-overlay.Modal-overlay
+  .AuthorsModal-main.Modal-main
+    .CardWithTitle 
+      .CardWithTitle-header.flex.items-center.justify-between
+        .CardWithTitle-header-title DANH SÁCH TÁC GIẢ
+        .CardWithTitle-header-close.Modal-close
+          img(src="./assets/icons/icon-close-gray.svg", alt="")
+
+      .CardWithTitle-body
+        .AuthorsModal-wrapper.flex.flex-wrap 
+          each item in dataAuthors 
+            .AuthorsModal-wrapper-item.flex.justify-center.flex-col.items-center
+              +Avatar(item)
+              .AuthorsModal-name= item.fullName

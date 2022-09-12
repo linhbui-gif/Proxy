@@ -1,0 +1,12 @@
+mixin FilterTags({ data = [] })
+  form(action="#").FilterTags.flex.flex-wrap
+    each item in data
+      .FilterTags-item 
+        if (index === 0)
+          input(type="checkbox" checked).FilterTags-item-input
+        else
+          input(type="checkbox").FilterTags-item-input
+
+        .FilterTags-item-label= item.label
+
+

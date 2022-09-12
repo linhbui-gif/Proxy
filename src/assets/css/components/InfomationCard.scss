@@ -1,0 +1,23 @@
+.InfomationCard {
+  padding: 16px;
+  background: color(white);
+  border-radius: 5px;
+
+  &-title {
+    color: color(gray);
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+
+  &-description {
+    color: color(red);
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+  &-icon {
+    flex: 0 0 16px;
+    max-width: 16px;
+    margin-right: 8px;
+  }
+}

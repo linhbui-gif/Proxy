@@ -1,0 +1,10 @@
+mixin CardInfo({ data = [] })
+  .CardInfo 
+    each item in data 
+      .CardInfo-row.flex.items-center 
+        .CardInfo-row-item.flex.items-center 
+          .CardInfo-row-item-icon 
+            img(src=`${item.icon}`, alt="")
+          = item.label
+
+        .CardInfo-row-item= item.value

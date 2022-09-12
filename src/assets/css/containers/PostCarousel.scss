@@ -1,0 +1,109 @@
+.PostCarousel {
+  position: relative;
+  margin: 30px 0;
+
+  .owl-stage {
+    @media (min-width: 992px) {
+      margin-left: -1px;
+    }
+  }
+
+  @media (max-width: 991px) {
+    margin: 16px 0;
+  }
+
+  &-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    display: block;
+
+    @media (max-width: 991px) {
+      border-radius: 0;
+    }
+
+    &-image {
+      display: flex;
+      height: 525px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
+    &-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 16px 30px;
+      background: color(jaguar-alpha-75);
+
+      &-content {
+        font-size: 14px;
+        color: color(white);
+        max-width: 85%;
+        @include ellipsis(3);
+
+        @media (max-width: 991px) {
+          max-width: 100%;
+        }
+      }
+
+      &-title,
+      &-description {
+        color: color(white);
+        font-size: 14px;
+        max-width: calc(100% - 70px);
+
+        @media (max-width: 991px) {
+          max-width: unset;
+        }
+      }
+
+      &-title {
+        font-weight: 500;
+      }
+
+      &-description {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  .owl-prev,
+  .owl-next {
+    position: absolute;
+    bottom: 16px;
+    right: 30px;
+    width: 28px;
+    height: 28px;
+
+    @media (max-width: 991px) {
+      right: 16px;
+      bottom: calc(100% + 24px);
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .owl-prev {
+    right: calc(30px + 12px + 28px);
+
+    @media (max-width: 991px) {
+      right: calc(12px + 28px);
+    }
+  }
+
+  .owl-next {
+    @media (max-width: 991px) {
+      right: 0;
+    }
+  }
+}

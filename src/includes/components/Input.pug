@@ -1,0 +1,18 @@
+//- const TInputProps = {
+//-   className: string,
+//-   type: 'text' | 'password',
+//-   size: 'small' | 'middle' | 'large',
+//-   placeholder: string,
+//- }
+
+mixin Input({ className = '', type = 'text', size = 'middle', placeholder = '', styleType = '', showHidePassword })
+  .Input(class=`${className} ${size} ${styleType} ${showHidePassword ? 'show-hide-password' : ''}`)
+    if type === 'textarea'
+      textarea(placeholder=`${placeholder}`).Input-control
+    else
+      input(type=`${type}` placeholder=`${placeholder}`).Input-control
+
+    if showHidePassword
+      .Input-show-hide-password 
+        img(src="./assets/icons/icon-eye-gray.svg", alt="")
+        img(src="./assets/icons/icon-eye-off-gray.svg", alt="")
