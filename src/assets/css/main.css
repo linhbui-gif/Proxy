@@ -465,9 +465,6 @@ form input[type="text"], form input[type="number"], form input[type="tel"], form
     .table.table-prices tr th {
       font-size: 1.1rem; } }
 
-.table.table-prices tr.table-active th {
-  font-size: 0.8rem; }
-
 .table.table-prices tr td {
   font-size: 1.6rem; }
   .table.table-prices tr td .colum-text {
