@@ -1,0 +1,19 @@
+.CategoryBlock {
+  text-align: center;
+  padding: 16px;
+  border-radius: 5px;
+  background: color(azure-radiance);
+
+  &-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: color(white);
+  }
+
+  &-description {
+    font-size: 13px;
+    font-weight: 500;
+    color: color(white);
+  }
+}

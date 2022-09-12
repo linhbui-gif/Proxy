@@ -1,0 +1,16 @@
+//- const TCheckboxProps = {
+//-   className: string,
+//-   size: 'small' | 'middle' | 'large',
+//-   placeholder: string,
+//- }
+
+mixin Checkbox({ className = '', type = 'text', size = 'middle', label = '', styleType = '' })
+  label.Checkbox(class=`${className} ${!label ? 'single' : ''} ${styleType}`)
+    .Checkbox-control.flex.items-start
+      input(type="checkbox").Checkbox-input
+      
+      .Checkbox-wrapper
+        img(src="./assets/icons/icon-check-white.svg", alt="")
+
+
+      .Checkbox-label= label

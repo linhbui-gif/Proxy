@@ -1,0 +1,202 @@
+extends includes/layouts/Layout.pug
+
+block pages
+    section.why-choose.text-center
+        h1.title-component-h1.c-white BUY PROXY
+        h3.title-component-h3.c-white PERSONAL ANONYMOUS PROXY HTTPS/SOCKS5
+        .intro-content
+            .container
+                .row
+                    each item in [1,2,3,4]
+                        .col-lg-3.col-6.text-center
+                            .intro-content-num 443 397
+                            .intro-content-text USERS HAVE CHOSEN US
+    section.ADVANTAGES
+        h1.title-component-h1.text-center OUR ADVANTAGES
+        .container
+            .row
+                each item in [1,2,3,4,5,6,7,8]
+                    .col-lg-3.col-6
+                        +CardComponent({
+                            className:'vertical',
+                            title:'LOW PRICES',
+                            src: '',
+                            desc: 'We have some of the lowest prices in the market.'
+                        })
+                .col-12.text-center
+                    p.more
+                      | MORE THAN
+                      span.orange 443 THOUSANDS
+                      | OF CLIENTS ALREADY CHOSEN US
+    section.buy-proxy-home
+        h1.title-component-h1.c-white.text-center
+           |BUY PROXY
+           span.orange.ml-2 IPV4 / IPV6
+        .container
+                .row
+                    each item in [1,2,3]
+                        .col-lg-4.col-md-6
+                            form.form-order
+                                table.order_table.table.table-bordered
+                                    tbody
+                                        tr
+                                            th.text-center.table-active(colspan='2')
+                                                h5.mb-0.font-weight-bold.text-uppercase
+                                                    | IPv6 Proxy
+                                        tr
+                                            td.text-center.small(colspan='2')
+                                                | Suitable for sites with
+                                                a(href='/website-ipv6-support' target='_blank').text-warning.ml-2 IPv6 support
+                                                | .
+                                        tr
+                                            td.text-center.text-success.table-active(colspan='2') Individual use. In one hand
+                                        tr
+                                            td.text-right.upcs(width='80')
+                                                b Country
+                                            td.text-center
+                                                input#proxy6-country_code(type='hidden' name='country' value='ru')
+                                        tr
+                                            td.text-right.upcs
+                                                b Count
+                                            td.text-center
+                                                .form.mb-0
+                                                    input(data-order='count' type='number' class="form-control medium" name='count' value='1' min='1' required='')
+                                        tr
+                                            td.text-right.upcs
+                                                b Period
+                                            td.text-center
+                                                .form-group
+                                                    select#exampleFormControlSelect1.form-control.medium
+                                                        option 1
+                                                        option 2
+                                                        option 3
+                                                        option 4
+                                                        option 5
+                                        tr
+                                            td.text-right.upcs
+                                                b Type
+                                            td.text-center
+                                                .form.mb-0
+                                                    input(type='text' class="form-control medium" value='HTTPs / SOCKS5' disabled='')
+                                        tr
+                                            td.text-right.upcs
+                                                b Price
+                                            td
+                                                b(data-order='price') 0.06$
+                                        tr
+                                            td.text-center(colspan='2')
+                                                +Button({
+                                                    size: 'middle orange',
+                                                    type: 'button',
+                                                    dataToggle: "modal",
+                                                    dataTarget: ".bd-example-modal-sm",
+                                                    classCustomButton: 'w-100',
+                                                    title: 'Buy'
+                                                })
+                                        tr
+                                            td.text-center.small(colspan='2')
+                                                a.dotd.color-light(href='#' data-free_count='') Available quantity
+                ul.home-order_list
+                    li &minus; Proxies are issued in the automatic mode right after payment &minus;
+                    li
+                        | &minus; Our paid proxies are only available in one hand (except Shared) - it means that except you nobody use them &minus;
+                    li &minus; Our proxies are fully anonymous &minus;
+    section.partner-program.text-center
+        h1.title-component-h1 PARTNERSHIP PROGRAM
+        .partner-program-text.content-ckeditor
+            | Our partnership program allows you to gain
+            b 30%
+            |  from payments of the recruited clients.
+            br
+            .mobile-hide
+                | To join our partnership program you just need:
+                br
+                br
+                b To recruit new clients with the referral link
+                |  - the user registered from your link is permanently assigned to you and from all his payments you will be paid a percentage;
+                br
+                b Distribute a coupon for a discount
+                |  - the user who used your coupon receives a 5% discount on the purchase and assigned to you and from all his payments you will be paid a percentage.
+                br
+                br
+                .small
+                    | Partnership bonus can be used for payments of our services or you can withdraw it by WebMoney, QIWI or Payeer.
+            br
+            .button-readmore
+               +Button({size: 'small-middle orange',classCustomButton: 'custom-button-link',link:'#', title: 'Read More'})
+            p.more
+                | OUR PARTNERS HAVE ALREADY EARNED
+                span.orange 775 268,27 $
+    section.question
+       .container
+           .row
+               .col-lg-6
+                   h1.title-component-h1 HAVE QUESTIONS?
+                   form
+                       .form-group
+                           input(data-order='count' type='text' class="form-control medium" name='count' placeholder="Name")
+                       .form-group
+                           input(data-order='count' type='text' class="form-control medium" name='count' placeholder="E-mail")
+                       .form-group
+                           select#exampleFormControlSelect1.form-control.medium
+                               option Tech support
+                               option 1
+                               option 2
+                               option 3
+                               option 4
+                               option 5
+                       .form-group
+                           textarea#exampleFormControlTextarea1.form-control.textarea-medium(rows='10' placeholder="Message..").w-100
+                       +Button({ size: 'small-middle orange',classCustomButton: 'w-100', title: 'Send' })
+               .col-lg-6
+                   .question-contact
+                       p Write to us and we will try to help as fast as possible you and to consult.
+                       .media
+                           i.fa.fa-comment
+                           span
+                             a(href="").orange Live Chat
+                       .media
+                           i.fa.fa-inbox
+                           span
+                               a(href="").orange support@proxy6.net
+                       .media
+                           i.fa.fa-telegram
+                           span
+                               a(href="t.me/proxy6").orange t.me/proxy6
+    section.home-descr
+        .container
+            .row
+                .col-12
+                    .content-ckeditor
+                        | Our team is selling
+                        a(href='https://proxy6.net/en/personal-proxy').orange personal
+                        | , individual,
+                        a(href='https://proxy6.net/en/anonymous-proxy').orange anonymous proxy
+                        |  servers during six years. Why should you buy proxy from us?
+                        br
+                        ul
+                            li
+                                | High speed &ndash; our proxies are fast and stable;
+                                br
+                            li
+                                | Fully anonymous &ndash; the proxy is completely anonymous and we do not log your actions, and we issue a proxy only in one hand;
+                                br
+                            li
+                                | Low prices &ndash; we have some of the cheapest proxy IPv4 and IPv6;
+                                br
+                            li
+                                | Full automation &ndash; you do not need to wait for the leased proxy to be issued after payment, they are issued immediately and automatically displayed in your personal account;
+                                br
+                            li
+                                | Fast support &ndash; we will answer all your technical or other questions about IPv4 and IPv6 proxies. To contact us use email or online chat;
+                                br
+                        | &#x9;&#x9;&#x9;Our reliable personal proxies are suitable for working with all sites and services:
+                        br
+                        ul
+                            li
+                                | Proxy IPv6 is perfect for working in social networks, such as: facebook, instagram, youtube and many others with support for IPv6;
+                            li Proxy IPv4 suitable for work with any sites and services;
+                        | &#x9;&#x9;&#x9;Our cheap fast proxies allow you to work in a network comfortably and safely. You can access sites that are not allowed to view in your country.
+                        br
+                        | &#x9;&#x9;&#x9;If you are still wondering: Where to buy a proxy? - then the answer to it is PROXY6.net
+

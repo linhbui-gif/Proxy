@@ -1,0 +1,116 @@
+.why-choose{
+  position: relative;
+  background: #111;
+  color: #fff;
+  padding: 4rem 0;
+  border-bottom: 0px solid #CE540A;
+  h1{
+    font-size: 6rem;
+    margin: 0;
+  }
+  h3{
+    line-height: 1.2;
+    font-weight: 300;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  .intro-content{
+    &-num{
+      margin-top: 1rem;
+      display: inline-block;
+      color: color(orange);
+      font-size: 3rem;
+      font-weight: 400;
+      line-height: 40px;
+      margin-bottom: 1px;
+    }
+    &-text{
+      font-weight: 300;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+    }
+  }
+}
+.ADVANTAGES{
+  padding: 3.5rem 0;
+
+}
+.buy-proxy-home{
+  background: #111;
+  padding: 4rem 0;
+  .home-order_list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 40px;
+    li{
+      font-weight: 300;
+      text-align: center;
+      margin: 5px 0;
+      color: white;
+      font-size: 1.8rem;
+    }
+  }
+}
+.partner-program{
+  padding: 3rem 0;
+  .button-readmore{
+    width: 148px;
+    margin: 0 auto;
+  }
+}
+.more{
+   font-size: 20px;
+   font-weight: 700;
+   text-transform: uppercase;
+   margin-top: 50px;
+   margin-bottom: 10px;
+   span{
+     font-weight: 700;
+     margin: 0 .5rem;
+   }
+ }
+.question{
+  position: relative;
+  padding: 60px 0;
+  background-color: #f5f5f5;
+  border-top: 2px solid #e5e5e5;
+  &-contact{
+    margin: 0.67em 0;
+    p{
+      font-size: 17px;
+      margin-bottom: 20px;
+    }
+    .media{
+      margin-top: 1.2rem;
+
+      i{
+        display: inline-block;
+        vertical-align: top;
+        font-size: 15px;
+        padding: 10px;
+        border-radius: 50%;
+        background-color: #050505;
+        color: #fff;
+        line-height: 1;
+        margin-right: 1.5rem;
+      }
+      span{
+        a{
+          font-size: 2rem;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
+.home-descr{
+  padding: 60px 0;
+  ul{
+    list-style: disc;
+    padding-left: 3rem;
+  }
+}

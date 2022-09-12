@@ -1,0 +1,26 @@
+.FilterCategoryMobile
+  .FilterCategoryMobile-overlay 
+  .FilterCategoryMobile-close 
+      img(src="./assets/icons/icon-x-white.svg", alt="")
+
+  .FilterCategoryMobile-main 
+    .CardWithTitle
+      .CardWithTitle-header.flex.items-center.justify-between
+        .CardWithTitle-header-title PHÂN LOẠI
+
+      .CardWithTitle-body 
+        +FolderTree({ title: 'Nguồn tài liệu', data: dataFolderTree1 })
+        +FolderTree({ title: 'Theo chủ đề', data: dataFolderTree2 })
+        +FolderTree({ title: 'Theo tác giả', seeMore: true, data: dataFolderTree3 })
+
+    .CardWithTitle
+      .CardWithTitle-header.flex.items-center.justify-between
+        .CardWithTitle-header-title Thống kê
+
+      .CardWithTitle-body 
+        +CardInfo({ data: dataCardInfoStatistical1 })
+        +CardInfo({ data: dataCardInfoStatistical2 })
+
+  .FilterCategoryMobile-submit.flex.justify-between
+    +Button({ size: 'small-middle', styleType: 'outline-primary', title: 'Thiết lập lại' })
+    +Button({ size: 'small-middle', title: 'Lọc' })

@@ -1,0 +1,95 @@
+.Comments {
+  &-item {
+    margin: 12px 0;
+    padding: 12px 0px 12px 16px;
+    border-radius: 5px;
+
+    &.reply {
+      position: relative;
+      background: color(alabaster);
+      border: 1px solid color(alto);
+
+      &::before {
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        background: color(alabaster);
+        border: 1px solid color(alto);
+        border-bottom: none;
+        border-right: none;
+        content: '';
+        left: 15px;
+        pointer-events: none;
+        top: 0;
+        transform: translateY(-50%) rotate(45deg);
+      }
+    }
+  }
+
+  &-main {
+    flex: 1;
+  }
+
+  &-avatar {
+    flex: 0 0 24px;
+    max-width: 24px;
+    margin-right: 12px;
+  }
+
+  &-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: color(mine-shaft);
+    margin: 6px 0 8px;
+
+    &-badge {
+      font-size: 12px;
+      color: color(emperor);
+      padding: 4px 8px;
+      background: color(cream-can);
+      margin-left: 8px;
+      border-radius: 3px;
+    }
+  }
+
+  &-content {
+    white-space: pre-wrap;
+    font-size: 13px;
+    color: color(gray);
+    margin-bottom: 8px;
+  }
+
+  &-actions {
+
+    &-reply,
+    &-time {
+      font-size: 13px;
+    }
+
+    &-time {
+      color: color(gray);
+      margin-left: 8px;
+    }
+
+    &-reply {
+      color: color(azure-radiance)
+    }
+  }
+
+  &-input {
+    .Input {
+      &-control {
+        height: auto !important;
+        min-height: 80px;
+        border-radius: 5px;
+        border: 1px solid color(alto);
+        padding: 10px 15px !important;
+        resize: none;
+      }
+    }
+  }
+
+  &-submit {
+    margin: 20px 0 10px;
+  }
+}

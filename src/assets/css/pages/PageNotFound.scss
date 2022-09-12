@@ -1,0 +1,41 @@
+.PageNotFound {
+  text-align: center;
+  padding: 15px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  h1 {
+    text-transform: uppercase;
+    color: color(azure-radiance);
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 8px;
+
+    @media (max-width: 991px) {
+      font-size: 20px;
+    }
+  }
+
+  p {
+    font-size: 20px;
+    color: color(gray);
+
+    @media (max-width: 991px) {
+      font-size: 14px;
+    }
+  }
+
+  img {
+    display: block;
+    margin-top: 16px;
+    max-width: 1140px;
+    width: 100%;
+
+    @media (max-width: 1440px) {
+      max-width: 1024px;
+    }
+  }
+}

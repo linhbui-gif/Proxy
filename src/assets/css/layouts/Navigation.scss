@@ -1,0 +1,52 @@
+.Navigation{
+  background: color(orange);
+  padding: 10px 0;
+  &-item{
+    .button-bars{
+      display: none;
+      @media (max-width: 991px) {
+        display: block;
+        //margin-bottom: 2rem;
+      }
+      i{
+        font-size: 2rem;
+        color: color(white);
+      }
+    }
+  }
+  .list-item-group{
+    margin-bottom: 0;
+    &.horizon{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      @media (max-width: 991px) {
+         max-height: 0;
+         overflow:hidden;
+         transition: .5s;
+      }
+      &.active{
+        @media (max-width: 991px) {
+         max-height: 100vh;
+        }
+      }
+      li{
+        margin-left: 2rem;
+        @media (max-width: 991px) {
+          width: 100%;
+          margin: 0;
+        }
+        a{
+          font-size: 14px;
+          color: color(white);
+          text-transform: capitalize;
+          @media (max-width: 991px) {
+            padding: .5rem 0;
+            display: block;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,88 @@
+.Select {
+  &.small-middle {
+    &.reverse {
+      .select2-container {
+        .select2-selection--single {
+          padding: 2px calc(12px + 24px) 2px 24px;
+        }
+      }
+    }
+
+    .select2-container {
+      border-radius: 3px;
+
+      .select2-selection--single {
+        height: 32px;
+        padding: 2px 24px 2px calc(12px + 24px);
+
+        .select2-selection__rendered {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+
+  &.white {
+    .select2-container {
+      background: color(white);
+    }
+  }
+
+  &.gray {
+    .select2-container {
+      background: color(concrete);
+    }
+  }
+
+  &.reverse {
+    .select2-container {
+      .select2-selection--single {
+        .select2-selection__arrow {
+          right: 12px;
+          left: unset;
+        }
+      }
+    }
+  }
+
+  .select2-container--default .select2-selection--single .select2-selection__placeholder {
+    color: color(emperor);
+    font-weight: 500;
+  }
+
+  .select2-container {
+    border: 1px solid color(silver);
+    border-radius: 5px;
+
+    .select2-selection--single {
+      height: auto;
+      border: none;
+      background: transparent;
+
+      .select2-selection__arrow {
+        width: 16px;
+        height: 16px;
+        left: 12px;
+        right: unset;
+        top: 50%;
+        background: url('../icons/icon-angle-up-gray-dark.svg');
+        transform: translateY(-50%) rotate(180deg);
+        background-size: cover;
+        background-position: center;
+
+        b {
+          display: none;
+        }
+      }
+
+      .select2-selection__rendered {
+        padding: 0;
+        color: color(emperor);
+      }
+    }
+  }
+}
+
+.select2-results__options li {
+  font-size: 12px;
+}

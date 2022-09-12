@@ -1,0 +1,30 @@
+.Comments
+  each item in [1,2]
+    .Comments-item.flex.items-start
+      .Comments-avatar 
+        +Avatar({ name: 'T' })
+      .Comments-main
+        .Comments-name.flex.items-center Tiến
+        .Comments-content Mình không đọc được tài liệu này Ad ơi?
+        .Comments-actions.flex.items-center 
+          .Comments-actions-reply Trả lời
+          .Comments-actions-time - 23 giờ trước
+
+        .Comments-item.flex.items-start.reply
+          .Comments-avatar 
+            +Avatar({ image: './assets/images/image-avatar.png' })
+          .Comments-main
+            .Comments-name.flex.items-center
+              |Thành Luân 
+              .Comments-name-badge Quản trị viên
+            .Comments-content Mình không đọc được tài liệu này Ad ơi?
+            .Comments-actions.flex.items-center 
+              .Comments-actions-reply Trả lời
+              .Comments-actions-time - 23 giờ trước
+
+  .Comments-input
+    +Input({ placeholder: 'Mời bạn để lại bình luận...', type: 'textarea' })
+    .Comments-submit.flex.justify-center 
+      +Button({ title: 'Gửi bình luận', size: 'small' })
+
+  

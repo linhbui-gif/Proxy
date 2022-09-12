@@ -1,0 +1,33 @@
+mixin CardComponent({ hozizon,className, title, desc, tag , src, circle})
+    if hozizon
+        .Card-component(class=`${className ? className : className}`)
+            .Card-component-left
+                .Card-component-left-image
+                    a(href="#" title="")
+                        img(src=`${src}` alt=`${alt ? alt : ''}` class=`${circle ? circle : ''}`)
+            .Card-component-body
+                .Card-component-body-content
+                     h3.Card-component-body-content-title
+                         a(href="#" title="")=title
+                     p.Card-component-body-content-description=desc
+                .Card-component-body-footer
+                    .Card-footer-tags
+                        i.fa.fa-tags
+                        a(href="#" title="")=tag
+                    .Card-footer-times
+                        span
+                            i.fa.fa-clock-o
+                            | 20.03.2018
+                        span
+                            a(href="#" title="") Читать далее...
+    else
+        .Card-component(class=`${className ? className : className}`)
+            .Card-component-left
+                .Card-component-left-image
+                    a(href="#" title="")
+                        img(src=`${src}` alt=`${alt ? alt : ''}` class=`${circle ? circle : ''}`)
+            .Card-component-body
+                .Card-component-body-content
+                    h3.Card-component-body-content-title
+                        a(href="#" title="")=title
+                    p.Card-component-body-content-description=desc

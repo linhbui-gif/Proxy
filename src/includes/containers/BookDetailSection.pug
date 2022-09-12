@@ -1,0 +1,69 @@
+.BookDetailSection.flex.flex-wrap.items-start.justify-between
+  .BookDetailSection-col
+    .BookDetailSection-preview.flex.items-start
+      .BookDetailSection-preview-list
+        .BookDetailSection-preview-list-arrow.prev 
+          img(src="./assets/icons/icon-angle-up-gray-light.svg", alt="")
+
+        .BookDetailSection-preview-list-group
+          each item in [1,2,3,4,5]
+            .BookDetailSection-preview-list-item 
+              img(src="./assets/images/image-book-detail.png", alt="")
+        
+        .BookDetailSection-preview-list-arrow.next
+          img(src="./assets/icons/icon-angle-down-gray-light.svg", alt="")
+
+        //- .owl-carousel#BookDetailSection-list
+        //-   each item in [1,2,3,4,5]
+        //-     .item
+        //-       .BookDetailSection-preview-list-item 
+        //-         img(src="./assets/images/image-book-detail.png", alt="")
+
+
+      .BookDetailSection-preview-carousel-wrapper
+        .BookDetailSection-preview-carousel 
+          .owl-carousel#BookDetailSection-carousel 
+            each item in [1,2,3,4,5]
+              .item 
+                .BookDetailSection-preview-carousel-item 
+                  img(src="./assets/images/image-book-detail.png", alt="")
+
+        .BookDetailSection-actions.flex.items-center.justify-center.auto
+          +Button({ size: 'small-middle', title: 'Đọc thử', iconImage: './assets/icons/icon-book-green.svg', styleType: 'outline-green' })
+          +Button({ size: 'small-middle', title: 'Nghe thử', iconImage: './assets/icons/icon-headphone-blue.svg', styleType: 'outline-primary' })
+
+  .BookDetailSection-col
+    .BookDetailSection-title Chiến lược barbell trong quản trị danh mục đầu tư trái phiếu của ngân hàng thương mại Việt Nam
+    .BookDetailSection-subtitle Subtitle: Mô tả tiêu đề phụ ở đây
+    .BookDetailSection-values.flex.flex-wrap.items-center 
+      .BookDetailSection-values-item.flex.items-center
+        .BookDetailSection-values-item-number 4.5
+        .BookDetailSection-values-item-label.flex.items-center 
+          each item in [1,2,3,4,5]
+            img(src="./assets/icons/icon-star-yellow.svg" alt="")
+      .BookDetailSection-values-item.flex.items-center
+        .BookDetailSection-values-item-number 52358
+        .BookDetailSection-values-item-label Lượt xem
+      .BookDetailSection-values-item.flex.items-center
+        .BookDetailSection-values-item-number 3639
+        .BookDetailSection-values-item-label Đã bán
+
+    .SeeMore
+      table.BookDetailSection-table
+        each item in dataTableBook 
+          tr 
+            td= item.key 
+            td= item.value
+        each item in dataTableBook 
+          tr 
+            td= item.key 
+            td= item.value
+
+      .SeeMore-btn.flex.items-center.justify-center
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 9.3335L8.70711 6.0406C8.31658 5.65008 7.68342 5.65008 7.29289 6.0406L4 9.3335" stroke="#0065CA" stroke-width="1.5" stroke-linecap="round"/></svg>
+        span Xem đầy đủ
+
+    .BookDetailSection-actions.flex.items-center.justify-between.full
+      +Button({ size: 'middle', title: 'Đọc sách', iconImage: './assets/icons/icon-eye-white.svg' })
+      +Button({ size: 'middle', title: 'Lưu vào tủ sách', iconImage: './assets/icons/icon-bookmark-outline-white.svg', styleType: 'green' })
+

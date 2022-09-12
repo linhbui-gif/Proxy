@@ -1,0 +1,59 @@
+include ../common/data.pug
+
+include ../components/Button.pug
+include ../components/Input.pug
+//include ../components/CardBookView.pug
+//include ../components/CardWithTitle.pug
+//include ../components/BookBlock.pug
+//include ../components/PostBlock.pug
+//include ../components/BookCollection.pug
+//include ../components/ReaderBookView.pug
+//include ../components/FolderTree.pug
+//include ../components/CardInfo.pug
+//include ../components/Breadcrumb.pug
+//include ../components/FilterTags.pug
+//include ../components/Pagination.pug
+//include ../components/CategoryBlock.pug
+//include ../components/Avatar.pug
+//include ../components/BookBoxHorizontal.pug
+//include ../components/Select.pug
+//include ../components/Checkbox.pug
+//include ../components/InfomationCard.pug
+include ../components/ListGroupComponent.pug
+include ../components/CardComponent.pug
+
+include ../containers/Country
+//include ../containers/ProfileCard.pug
+//include ../containers/ProfileCardMobile.pug
+
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible" content="ie=edge")
+        title Buy proxy. Personal anonymous IPv4/IPv6 proxies / PROXY6.net
+        block head
+
+        link(rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+
+        link(rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css")
+        //- CSS
+        link(rel="stylesheet" type="text/css" href="./assets/css/main.css")
+
+        //- Favicon
+        link(rel="icon" type="image/png" href="https://proxy6.net/static/img/favicon.png")
+
+
+
+    body
+        include Header.pug
+        include Navigation.pug
+        main
+          block pages
+        +ListGroupComponent({ className:'payment-method justify-content-center flex-wrap', type:'horizon', isImage:true, array: paymentMethod })
+        include Footer.pug
+        //- Java Script
+        script(src="./assets/js/jquery.min.js")
+        script(src='https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js' integrity='sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy' crossorigin='anonymous')
+        script(src="./assets/js/main.js")

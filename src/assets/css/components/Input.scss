@@ -1,0 +1,86 @@
+.Input {
+  position: relative;
+
+  &.show-hide-password {
+    .Input-control {
+      padding-right: 30px;
+    }
+  }
+
+  &-control {
+    width: 100%;
+    outline: none;
+    border: 1px solid color(white);
+    background: color(white);
+    border-radius: 3px;
+
+    &::placeholder {
+      color: color(gray);
+    }
+  }
+
+  &.middle {
+    .Input {
+      &-control {
+        height: 38px;
+        padding: 2px 12px;
+        font-size: 13px;
+      }
+    }
+  }
+
+  &.small-middle {
+    .Input {
+      &-control {
+        height: 32px;
+        padding: 2px 8px;
+        font-size: 13px;
+      }
+    }
+  }
+
+  &.gray {
+    .Input {
+      &-control {
+        border-color: color(alto);
+        background-color: color(wild-sand);
+      }
+    }
+  }
+
+  &-show-hide-password {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
+
+    img {
+      pointer-events: none;
+
+      &:first-child {
+        display: block;
+      }
+
+      &:last-child {
+        display: none;
+      }
+    }
+
+    &.active {
+      img {
+
+        &:first-child {
+          display: none;
+        }
+
+        &:last-child {
+          display: block;
+        }
+      }
+    }
+  }
+}

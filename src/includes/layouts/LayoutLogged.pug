@@ -1,0 +1,52 @@
+include ../common/data.pug
+
+include ../components/Button.pug
+include ../components/Input.pug
+include ../components/CardBookView.pug
+include ../components/CardWithTitle.pug
+include ../components/BookBlock.pug
+include ../components/PostBlock.pug
+include ../components/BookCollection.pug
+include ../components/ReaderBookView.pug
+include ../components/FolderTree.pug
+include ../components/CardInfo.pug
+include ../components/Breadcrumb.pug
+include ../components/FilterTags.pug
+include ../components/Pagination.pug
+include ../components/CategoryBlock.pug
+include ../components/Avatar.pug
+include ../components/BookBoxHorizontal.pug
+include ../components/Select.pug
+include ../components/Checkbox.pug
+
+doctype html
+html
+	head
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible" content="ie=edge")
+		title Trung tâm Thông tin - Thư Viện Đai Học Kinh Tế Quốc Dân
+		block head
+
+		//- CSS
+		link(rel="stylesheet" type="text/css" href="./assets/css/main.css")
+
+		//- Favicon
+		link(rel="icon" type="image/png" href="./assets/images/favicon-neu.svg")
+
+
+	body
+		- const isLogged = true
+		include Header.pug
+		include Navigation.pug
+
+		block pages
+
+		include Notification.pug
+		include Footer.pug
+
+		//- Java Script
+		script(src="./assets/js/jquery.min.js")
+		script(src="./assets/js/owl.carousel.min.js")
+		script(src="./assets/js/select2.min.js") 
+		script(src="./assets/js/main.js")

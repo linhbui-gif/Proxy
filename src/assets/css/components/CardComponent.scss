@@ -1,0 +1,104 @@
+.Card{
+  &-component{
+    &.vertical{
+      .Card-component-left-image{
+        display: block;
+        width: 64px;
+        height: 64px;
+        margin: 2rem auto;
+        background: url(https://proxy6.net/static/img/whywe.png) no-repeat;
+        overflow: hidden;
+        background-position: -66px -195px;
+      }
+      .Card-component-body-content{
+        text-align: center;
+      }
+      .Card-component-body-content-description{
+        margin:1rem 0;
+      }
+      .Card-component-body-content-title{
+        color: color(black);
+        font-size: 1.7rem;
+        a{
+          color: color(black);
+          text-decoration: none;
+          font-size: 1.7rem;
+        }
+      }
+    }
+     &.hozizon{
+        display: flex;
+       .Card-component-left{
+         .Card-component-left-image{
+           img{
+             width: 200px;
+             height: 200px;
+             @media (max-width: 992px) {
+               width: 100px;
+               height: 100px;
+             }
+           }
+         }
+       }
+     }
+    &-left{
+      &-image{
+        a{
+          img{
+            width: 100%;
+          }
+        }
+
+      }
+    }
+    &-body{
+       padding-left: 2rem;
+      &-content{
+        &-title{
+          a{
+            color: color(orange);
+            font-weight: 700;
+            font-size: 2.5rem;
+          }
+        }
+        &-description{
+          line-height: 1.5;
+          font-size: 1.5rem;
+          margin: 2rem 0;
+        }
+      }
+      &-footer{
+        .Card-footer-tags{
+          margin-bottom: 1.5rem;
+          i{
+            color: color(color-light);
+            font-size: 1.5rem;
+            margin-right: 1.5rem;
+          }
+          a{
+            color: color(orange);
+            font-size: 1.5rem;
+          }
+        }
+        .Card-footer-times{
+          span{
+            font-size: 1.5rem;
+          }
+          span:first-child{
+            margin-right: 1.5rem;
+            color: #888;
+
+            i{
+              margin-right: 1rem;
+            }
+          }
+          span:last-child{
+           a{
+             color: color(orange);
+           }
+          }
+        }
+      }
+    }
+  }
+}

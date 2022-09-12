@@ -1,0 +1,236 @@
+.NavigationMobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  display: none;
+  z-index: 10;
+
+  @media (max-width: 991px) {
+    display: block;
+  }
+
+  &.active {
+    pointer-events: unset;
+
+    .NavigationMobile {
+      &-close {
+        opacity: 1;
+      }
+
+      &-overlay {
+        opacity: 0.6;
+      }
+
+      &-main {
+        transform: translateX(0%);
+      }
+    }
+  }
+
+  &-overlay {
+    position: absolute;
+    background: color(mine-shaft);
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: $common-transition;
+  }
+
+  &-main {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    right: 0;
+    z-index: 2;
+    background: color(white);
+    max-width: 320px;
+    padding: 30px 16px;
+    transition: $common-transition;
+    transform: translateX(100%);
+
+    @media (max-width: 375px) {
+      max-width: 280px;
+    }
+  }
+
+  &-title {
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: color(mine-shaft);
+    position: relative;
+    margin-bottom: 20px;
+
+    &::before {
+      position: absolute;
+      bottom: -8px;
+      height: 3px;
+      width: 84px;
+      background: color(azure-radiance);
+      left: 0;
+      content: '';
+    }
+  }
+
+  &-list {
+    &-item {
+      padding: 12px 0;
+      transition: $common-transition;
+      cursor: pointer;
+
+      &-caret {
+        width: 16px;
+        margin-left: auto;
+
+        svg {
+          transform: rotate(180deg);
+          transition: $common-transition;
+        }
+      }
+
+      a {
+        font-size: 14px;
+        font-weight: 400;
+        color: color(emperor);
+        flex: 1;
+        transition: $common-transition;
+      }
+
+      &.active {
+        .NavigationMobile-list-item-caret svg {
+          transform: rotate(0deg);
+        }
+      }
+
+      &.active,
+      &:hover {
+        &>a {
+          color: color(azure-radiance);
+        }
+
+        .NavigationMobile-list-item {
+          &-caret {
+            svg path {
+              stroke: color(azure-radiance);
+            }
+          }
+
+          &-icon {
+            svg path {
+              fill: color(azure-radiance);
+            }
+          }
+        }
+      }
+
+      &:not(:last-child) {
+        border-bottom: 1px solid color(alto);
+      }
+
+      &-icon {
+        flex: 0 0 16px;
+        max-width: 16px;
+        margin-right: 8px;
+
+        svg path {
+          transition: $common-transition;
+        }
+      }
+    }
+  }
+
+  &-sub-items {
+    flex: 0 0 100%;
+    max-width: 100%;
+    transition: $common-transition;
+    max-height: 0;
+    overflow: hidden;
+
+    &.active {
+      padding-top: 12px;
+      max-height: 100vh;
+      overflow: auto;
+    }
+
+    &-item {
+      padding: 12px 0 12px 24px;
+      transition: $common-transition;
+      cursor: pointer;
+
+      &:first-child {
+        border-top: 1px solid color(alto);
+      }
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+
+      a {
+        font-size: 14px;
+        font-weight: 400;
+        color: color(emperor);
+        width: 100%;
+        transition: $common-transition;
+      }
+
+      &:hover {
+        a {
+          color: color(azure-radiance);
+        }
+
+        .NavigationMobile-sub-items-item {
+          &-icon {
+            .document {
+              .stroke {
+                stroke: color(azure-radiance);
+              }
+              .fill {
+                fill: color(azure-radiance);
+              }
+            }
+          }
+        }
+      }
+
+      &:not(:last-child) {
+        border-bottom: 1px solid color(alto);
+      }
+
+      &-icon {
+        flex: 0 0 16px;
+        max-width: 16px;
+        margin-right: 8px;
+      }
+    }
+  }
+
+  &-close {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: calc(320px + 12px);
+    top: 12px;
+    background: color(white-alpha-03);
+    display: flex;
+    cursor: pointer;
+    z-index: 3;
+    opacity: 0;
+    transition: $common-transition;
+
+    @media (max-width: 375px) {
+      right: calc(280px + 8px);
+    }
+
+    img {
+      margin: auto;
+    }
+  }
+}

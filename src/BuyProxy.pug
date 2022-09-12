@@ -1,0 +1,93 @@
+extends includes/layouts/Layout.pug
+
+block pages
+    .buy-proxy.pt-4.pb-5
+        .container
+            h1.title-component-h1
+                | BUY PROXY
+            .row
+                each item in [1,2,3]
+                    .col-lg-4
+                        form.form-order
+                            table.order_table.table.table-bordered
+                                tbody
+                                    tr
+                                        th.text-center.table-active(colspan='2')
+                                            h5.mb-0.font-weight-bold.text-uppercase
+                                                | IPv6 Proxy
+                                    tr
+                                        td.text-center.small(colspan='2')
+                                            | Suitable for sites with
+                                            a(href='/website-ipv6-support' target='_blank').text-warning.ml-2 IPv6 support
+                                            | .
+                                    tr
+                                        td.text-center.text-success.table-active(colspan='2') Individual use. In one hand
+                                    tr
+                                        td.text-right.upcs(width='80')
+                                            b Country
+                                        td.text-center
+                                            input#proxy6-country_code(type='hidden' name='country' value='ru')
+                                    tr
+                                        td.text-right.upcs
+                                            b Count
+                                        td.text-center
+                                            .form.mb-0
+                                                input(data-order='count' type='number' class="form-control medium" name='count' value='1' min='1' required='')
+                                    tr
+                                        td.text-right.upcs
+                                            b Period
+                                        td.text-center
+                                            .form-group
+                                                select#exampleFormControlSelect1.form-control.medium
+                                                    option 1
+                                                    option 2
+                                                    option 3
+                                                    option 4
+                                                    option 5
+                                    tr
+                                        td.text-right.upcs
+                                            b Type
+                                        td.text-center
+                                            .form.mb-0
+                                                input(type='text' class="form-control medium" value='HTTPs / SOCKS5' disabled='')
+                                    tr
+                                        td.text-right.upcs
+                                            b Price
+                                        td
+                                            b(data-order='price') 0.06$
+                                    tr
+                                        td.text-center(colspan='2')
+                                            +Button({ size: 'middle orange', type: 'button', dataToggle:"modal", dataTarget: ".bd-example-modal-sm", classCustomButton: 'w-100', title: 'Buy' })
+                                    tr
+                                        td.text-center.small(colspan='2')
+                                            a.dotd.color-light(href='#' data-free_count='') Available quantity
+            .list-country.mt-2
+                    table.table.table-bordered.order_table
+                        tbody
+                            tr
+                                th.table-active.text-center.font-weight-bold(colspan='100' style="font-size:2rem") Available quantity
+                            tr
+                                td
+                                    b IPv6
+                                td.small
+                                    +CountryContainerList({isNumber: true,array: CountryList})
+                            tr
+                                td
+                                    b IPv4
+                                td.small
+                                    .order-free-item(title='Moldova (Republica Moldova)')
+                                        span.flag.md
+                                        div
+                                            span.label.label-default 1
+                            tr
+                                td
+                                    b Shrd
+                                td.small
+                                    .order-free-item(title='Canada')
+                                        span.flag.ca
+                                        div
+                                            span.label.label-default 1
+            .alert.alert-success.custom-font-size.color-green
+                | Our proxies are provided exclusively per customer (except Shared). Are not public - where anyone can buy access to them. Buying IP addresses from us, you can be sure that only you use them in the purposes.
+            .alert.alert-warning.custom-font-size.color-orange
+                | If you need a proxy to another country, or a greater number, e-mail us: support@proxy6.net

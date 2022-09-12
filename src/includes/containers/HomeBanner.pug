@@ -1,0 +1,15 @@
+section.HomeBanner
+  .HomeBanner-wrapper
+    .HomeBanner-wrapper-item
+      .owl-carousel.style-arrow-circle.style-dots-rectangle#HomeBanner-top
+        each item in [1,2,3]
+          .item 
+            .HomeBanner-item
+              img(src="./assets/images/image-banner-1.png", alt="")
+
+    .HomeBanner-wrapper-item
+      .owl-carousel#HomeBanner-bottom
+        each item in [2,3,4]
+          .item 
+            .HomeBanner-item
+              img(src=`./assets/images/image-banner-${item}.png`, alt="")

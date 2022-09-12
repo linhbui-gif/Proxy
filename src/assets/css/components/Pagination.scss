@@ -1,0 +1,69 @@
+.Pagination {
+  &-item {
+    margin: 0 4px;
+
+    &:not(.btn) {
+      a {
+        width: 33px;
+        height: 33px;
+        border: 1px solid color(mercury);
+      }
+
+      &:hover a {
+        background: color(science-blue-alpha-01);
+        border-color: color(science-blue-alpha-03);
+      }
+
+      &:active,
+      &.active {
+        a {
+          background: color(azure-radiance);
+          color: color(white)
+        }
+      }
+    }
+
+    &.btn {
+      &:hover {
+        a {
+          background: color(science-blue-alpha-01);
+          border-color: color(science-blue-alpha-03);
+        }
+      }
+
+      &:active {
+        a {
+          background: color(azure-radiance);
+          border-color: color(azure-radiance);
+        }
+
+        svg path {
+          fill: color(white);
+        }
+      }
+    }
+
+    
+
+    a {
+      font-size: 13px;
+      color: color(manatee);
+      border-radius: 3px;
+      background: color(white);
+      transition: $common-transition;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    svg path,
+    a {
+      transition: $common-transition;
+    }
+  }
+}

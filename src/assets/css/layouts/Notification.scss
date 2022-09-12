@@ -1,0 +1,134 @@
+.Notification {
+  position: fixed;
+  bottom: 50px;
+  right: 60px;
+  z-index: 100;
+
+  @media (max-width: 991px) {
+    display: none;
+    right: 50%;
+    transform: translateX(-50%);
+  }
+
+  &-item {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: color(white);
+    width: 330px;
+    height: 86px;
+    border-radius: 5px;
+    border: 1px solid color(science-blue-alpha-03);
+    box-shadow: 0px 15px 35px rgba(50, 50, 93, 0.1), 0px 5px 15px rgba(0, 0, 0, 0.07), 0px 2px 26px rgba(65, 141, 255, 0.1);
+    padding: 15px;
+    opacity: 0;
+    transform: translateY(50px);
+
+    @media (max-width: 374px) {
+      width: 300px;
+    }
+
+    &.show-up {
+      animation: showUpNotification 0.5s ease-out forwards;
+
+      @media (max-width: 991px) {
+        animation: showUpNotificationMb 0.5s ease-out forwards;
+      }
+
+      @keyframes showUpNotification {
+        0% {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateY(0px);
+        }
+      }
+
+      @keyframes showUpNotificationMb {
+        0% {
+          opacity: 0;
+          transform: translate(50%, 50px);
+        }
+
+        100% {
+          opacity: 1;
+          transform: translate(50%, 0px);
+        }
+      }
+    }
+
+    &.hide {
+      animation: hideNotification 0.5s ease-out forwards;
+
+      @media (max-width: 991px) {
+        animation: hideNotificationMb 0.5s ease-out forwards;
+      }
+
+      @keyframes hideNotification {
+        0% {
+          opacity: 1;
+          transform: translateY(0px);
+        }
+
+        100% {
+          opacity: 0;
+          transform: translateY(0px);
+        }
+      }
+
+      @keyframes hideNotificationMb {
+        0% {
+          opacity: 1;
+          transform: translate(50%, 0px);
+        }
+
+        100% {
+          opacity: 0;
+          transform: translate(50%, 0px);
+        }
+      }
+    }
+
+    &-close {
+      position: absolute;
+      cursor: pointer;
+      top: 6px;
+      right: 6px;
+      width: 22px;
+      height: 22px;
+    }
+
+    &-image {
+      position: relative;
+      flex: 0 0 37px;
+      max-width: 37px;
+      height: 56px;
+      border-radius: 2px;
+      margin-right: 8px;
+
+      img {
+        @include centerImage;
+      }
+    }
+
+    &-title {
+      font-size: 13px;
+      color: color(mine-shaft);
+      margin-bottom: 4px;
+      width: 95%;
+      @include ellipsis(2);
+
+      b {
+        font-weight: 700;
+      }
+    }
+
+    &-description {
+      color: color(manatee);
+      font-size: 12px;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.CategoryPage {
+  .CardWithTitle {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+
+      @media (max-width: 991px) {
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  .CardInfo {
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+
+  .SearchAdvanced {
+    margin-bottom: 16px;
+  }
+
+  .FolderTree {
+    &:not(:last-child) {
+      margin-bottom: 25px;
+    }
+  }
+}

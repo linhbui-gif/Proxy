@@ -1,0 +1,81 @@
+.ProfilePage {
+
+  .layout-col.left,
+  .layout-col.right {
+    max-width: calc(100% / 4 - 15px);
+    flex: 0 0 calc(100% / 4 - 15px);
+
+    @media (max-width: 991px) {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+
+  .layout-col.main {
+    flex: 0 0 calc(100% * 9 / 12 - 15px);
+    max-width: calc(100% * 9 / 12 - 15px);
+
+    @media (max-width: 991px) {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+
+  .layout-col.main .CardWithTitle {
+    @media (max-width: 991px) {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+
+  .CardWithTitle {
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+
+    &-list-layout-filter-sort-select {
+      padding-right: 0;
+    }
+  }
+
+
+  @media (max-width: 991px) {
+    .ProfileInfomationPage {
+      &-info {
+        margin: 0;
+        padding: 8px 16px;
+
+        &-item {
+          padding: 0;
+          width: 100%;
+
+          &:nth-child(odd) {
+            .InfomationCard {
+              background: color(azure-radiance);
+
+              &-title,
+              &-description {
+                color: color(white);
+              }
+            }
+          }
+
+          &:nth-child(even) {
+            .InfomationCard {
+              background: color(shamrock);
+
+              &-title,
+              &-description {
+                color: color(white);
+              }
+            }
+          }
+
+          &:not(:last-child) {
+            margin-bottom: 15px;
+          }
+        }
+      }
+    }
+  }
+}

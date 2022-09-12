@@ -1,0 +1,18 @@
+mixin BookBoxHorizontal({ image, description, dataTable })
+  .BookBoxHorizontal.flex.flex-wrap
+    .BookBoxHorizontal-image
+      img(src=`${image}`, alt="")
+    .BookBoxHorizontal-info 
+      .BookBoxHorizontal-info-description= description 
+
+      table.BookBoxHorizontal-info-table
+        each item in dataTable 
+          tr 
+            td= item.key 
+            td= item.value
+
+      .BookBoxHorizontal-info-btns.flex.justify-between 
+        .BookBoxHorizontal-info-btns-item
+          +Button({ title: 'Đọc sách', styleType: 'primary-transparent special', iconSvg: 'eye' })
+        .BookBoxHorizontal-info-btns-item
+          +Button({ title: 'Xoá khỏi tủ sách', styleType: 'gray-transparent', iconSvg: 'eye' })

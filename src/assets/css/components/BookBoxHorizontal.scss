@@ -1,0 +1,86 @@
+.BookBoxHorizontal {
+  &-image {
+    flex: 0 0 264px;
+    max-width: 264px;
+    height: 264px;
+    margin-right: 16px;
+    padding: 16px;
+    display: flex;
+    // border: 1px solid color(alto);
+    transition: $common-transition;
+    position: relative;
+
+    img {
+      @include centerImage;
+      height: calc(100% - 32px);
+      width: calc(100% - 32px);
+    }
+  }
+
+  &:hover {
+    .BookBoxHorizontal {
+      &-image {
+        box-shadow: 0px 15px 35px rgba(50, 50, 93, 0.1), 0px 5px 15px rgba(0, 0, 0, 0.07);
+      }
+
+      &-info {
+        &-description {
+          color: color(science-blue)
+        }
+      }
+    }
+  }
+
+  &-info {
+    flex: 1;
+
+    &-description {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 15px;
+      color: color(mine-shaft);
+      transition: $common-transition;
+      display: block;
+    }
+
+    &-table {
+      width: 100%;
+      border-collapse: collapse;
+
+      tr:hover {
+        td {
+          background: color(alabaster);
+        }
+      }
+
+      td {
+        border: 1px solid color(alto);
+        padding: 6px 12px;
+        font-size: 13px;
+        color: color(jaguar);
+        vertical-align: middle;
+        transition: $common-transition;
+
+        &:first-child {
+          white-space: nowrap;
+        }
+      }
+    }
+
+    &-btns {
+      margin: 15px 0 -15px;
+
+      &-item {
+        flex: 0 0 calc(50% - 7.5px);
+        max-width: calc(50% - 7.5px);
+        margin-bottom: 15px;
+
+        .Button {
+          &-control {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

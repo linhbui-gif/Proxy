@@ -1,0 +1,42 @@
+//- const TBookCollectionProps = {
+//-   className?: string,
+//-   title: string,
+//-   subtitle: string,
+//-   description: string,
+//-   herotitle: string,
+//-   link?: string,
+//-   theme: 'blue' | 'white',
+//- }
+
+mixin BookCollection({ title, className = '', subtitle, image, description, link, herotitle, theme = 'blue' })
+  .BookCollection(class=`${className} ${theme}`)
+    .BookCollection-header.flex.justify-between.items-center
+      .BookCollection-header-item= herotitle
+      .BookCollection-header-item.flex.items-center 
+        .BookCollection-header-item-btn.owl-arrow-left
+          <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd" d="M9.3248 1.17496C8.86918 0.719349 8.13049 0.719349 7.67488 1.17496L0.674879 8.17496C0.219267 8.63057 0.219267 9.36927 0.674879 9.82488L7.67488 16.8249C8.13049 17.2805 8.86918 17.2805 9.3248 16.8249C9.78041 16.3693 9.78041 15.6306 9.3248 15.175L3.14975 8.99992L9.3248 2.82488C9.78041 2.36927 9.78041 1.63057 9.3248 1.17496Z" fill="#E0E0E0"/></svg>
+
+        .BookCollection-header-item-btn.owl-arrow-right
+          <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd" d="M0.675205 1.17496C1.13082 0.719349 1.86951 0.719349 2.32512 1.17496L9.32512 8.17496C9.78073 8.63057 9.78073 9.36927 9.32512 9.82488L2.32512 16.8249C1.86951 17.2805 1.13082 17.2805 0.675205 16.8249C0.219593 16.3693 0.219593 15.6306 0.675205 15.175L6.85025 8.99992L0.675205 2.82488C0.219593 2.36927 0.219593 1.63057 0.675205 1.17496Z" fill="#E0E0E0"/></svg>
+
+    .BookCollection-body 
+      .owl-carousel 
+        each item in [1,2]
+          .item
+            .BookCollection-main.flex.items-center.flex-wrap
+              .BookCollection-main-image 
+                img(src=`${image}`, alt="")
+
+              .BookCollection-main-info 
+                .BookCollection-main-info-title= title
+                .BookCollection-main-info-subtitle= subtitle
+                .BookCollection-main-info-description= description
+                .BookCollection-main-info-btn.flex 
+                  +Button({
+                    title: 'Xem chi tiết',
+                    styleType: 'orange',
+                    iconImage: './assets/icons/icon-double-angle-right-white.svg',
+                    size: 'small-middle',
+                    link,
+                    reverse: true,
+                  })

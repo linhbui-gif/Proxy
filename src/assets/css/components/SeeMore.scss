@@ -1,0 +1,44 @@
+.SeeMore {
+  position: relative;
+  max-height: 230px;
+  overflow: hidden;
+  padding: 0 4px;
+
+  &.active {
+    max-height: unset !important;
+
+    .SeeMore {
+      &-btn {
+        position: relative;
+
+        svg {
+          transform: rotate(0);
+        }
+      }
+    }
+  }
+
+  &-btn {
+    min-height: 75px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.37) -78.3%, rgba(255, 255, 255, 0.7) -22.05%, #FFFFFF 52.95%);
+    cursor: pointer;
+    font-size: 13px;
+    color: color(science-blue);
+    transition: $common-transition;
+
+    @media (max-width: 991px) {
+      min-height: 60px;
+    }
+
+    svg {
+      flex: 0 0 24px;
+      max-width: 24px;
+      margin-right: 8px;
+      transform: rotate(180deg);
+    }
+  }
+}

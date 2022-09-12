@@ -1,0 +1,470 @@
+.Button {
+  &-control {
+    position: relative;
+    outline: none;
+    cursor: pointer;
+    border: 1px solid;
+    border-radius: 3px;
+    transition: $common-transition;
+
+    &-title {
+      white-space: nowrap;
+      transition: $common-transition;
+    }
+
+    &-icon {
+      display: flex;
+
+      .stroke,
+      .fill {
+        transition: $common-transition;
+      }
+
+      img,
+      svg {
+        margin: auto;
+      }
+    }
+  }
+
+  &-badge {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 500;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    line-height: 1;
+
+    &.red {
+      background: color(red);
+      color: color(white);
+    }
+
+    &.blue {
+      background: color(science-blue);
+      color: color(white)
+    }
+
+    &.yellow {
+      background: color(orange-peel);
+      color: color(white);
+    }
+  }
+
+  &.reverse {
+    .Button {
+      &-control {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  &.primary {
+    .Button {
+      &-control {
+        background: color(azure-radiance);
+        border-color: color(azure-radiance);
+
+        &:hover {
+          background: color(science-blue);
+          border-color: color(science-blue);
+        }
+
+        &:active {
+          background: color(azure-radiance);
+          border-color: color(azure-radiance);
+        }
+
+        &-title {
+          color: color(white);
+        }
+      }
+    }
+  }
+
+  &.primary-transparent.special {
+    .Button {
+      &-control {
+        background: color(azure-radiance-alpha-01);
+        border-color: color(azure-radiance-alpha-01);
+
+        &:hover {
+          background: color(azure-radiance);
+
+          .Button-control {
+            &-icon {
+              .stroke {
+                stroke: color(white);
+              }
+
+              .fill {
+                fill: color(white);
+              }
+            }
+
+            &-title {
+              color: color(white);
+            }
+          }
+        }
+
+        &:active {
+          background: color(azure-radiance);
+        }
+
+        &-icon {
+          .stroke {
+            stroke: color(azure-radiance);
+          }
+
+          .fill {
+            fill: color(azure-radiance);
+          }
+        }
+
+        &-title {
+          color: color(azure-radiance);
+        }
+      }
+    }
+  }
+
+  &.primary-transparent {
+    .Button {
+      &-control {
+        background: color(azure-radiance-alpha-01);
+        border-color: color(azure-radiance-alpha-01);
+
+        &:hover {
+          background: color(wild-sand);
+        }
+
+        &:active {
+          background: color(science-blue-alpha-01);
+        }
+
+        &-title {
+          color: color(azure-radiance);
+        }
+      }
+    }
+  }
+
+  &.outline-primary {
+    .Button {
+      &-control {
+        background: color(white);
+        border-color: color(azure-radiance);
+
+        &:active {
+          background: color(science-blue-alpha-01);
+        }
+
+        &-title {
+          color: color(azure-radiance);
+        }
+      }
+    }
+  }
+
+  &.outline-white {
+    .Button {
+      &-control {
+        background: transparent;
+        border-color: color(white);
+
+        &:hover {
+          background: color(science-blue-alpha-03);
+        }
+
+        &:active {
+          background: color(science-blue);
+        }
+
+        &-title {
+          color: color(white);
+        }
+      }
+    }
+  }
+
+  &.yellow {
+    .Button {
+      &-control {
+        background: color(yellow-orange);
+        border-color: color(yellow-orange);
+
+        &:hover {
+          background: color(tangerine);
+          border-color: color(tangerine);
+        }
+
+        &:active {
+          background: color(yellow-orange);
+          border-color: color(yellow-orange);
+        }
+
+        &-title {
+          color: color(white);
+        }
+      }
+    }
+  }
+
+  &.red {
+    .Button {
+      &-control {
+        background: color(red);
+        border-color: color(red);
+
+        &:hover {
+          background: color(vermilion);
+          border-color: color(vermilion);
+        }
+
+        &:active {
+          background: color(red);
+          border-color: color(red);
+        }
+
+        &-title {
+          color: color(white);
+        }
+      }
+    }
+  }
+
+  &.orange {
+    .Button {
+      &-control {
+        background: color(orange);
+        border-color: color(orange);
+
+        &:hover {
+          background: color(orange);
+          border-color: color(orange);
+        }
+
+        &:active {
+          background: color(orange);
+          border-color: color(orange);
+        }
+
+        &-title {
+          color: color(white);
+        }
+      }
+    }
+  }
+
+  &.green {
+    .Button {
+      &-control {
+        background: color(shamrock);
+        border-color: color(shamrock);
+
+        &:hover {
+          background: color(mountain-meadow);
+          border-color: color(mountain-meadow);
+        }
+
+        &:active {
+          background: color(shamrock);
+          border-color: color(shamrock);
+        }
+
+        &-title {
+          color: color(white);
+        }
+      }
+    }
+  }
+
+  &.outline-green {
+    .Button {
+      &-control {
+        background: color(white);
+        border-color: color(shamrock);
+
+        &:hover {
+          border-color: color(chateau-green);
+          background: color(wild-sand);
+        }
+
+        &:active {
+          border-color: color(chateau-green);
+          background: color(chateau-green-alpha-03);
+        }
+
+        &-title {
+          color: color(shamrock);
+        }
+      }
+    }
+  }
+
+  &.gray-transparent {
+    .Button {
+      &-control {
+        background: color(alabaster);
+        border-color: color(alto);
+
+        &:hover {
+          background: color(wild-sand);
+          border-color: color(alto);
+        }
+
+        &:active {
+          background: color(alabaster);
+          border-color: color(alto);
+        }
+
+        &-icon {
+          .stroke {
+            stroke: color(gray);
+          }
+
+          .fill {
+            fill: color(gray);
+          }
+        }
+
+        &-title {
+          color: color(gray);
+        }
+      }
+    }
+  }
+
+  &.default {
+    .Button {
+      &-control {
+        background: color(white);
+        border-color: color(mercury);
+
+        &:hover {
+          background: color(wild-sand);
+          border-color: color(mercury);
+        }
+
+        &:active {
+          background: color(white);
+          border-color: color(mercury);
+        }
+        i{
+          font-size: 1.5rem;
+          margin-right: 0.5rem;
+        }
+        &-title {
+          color: color(emperor);
+        }
+      }
+    }
+  }
+
+  &.small {
+    &.only-icon {
+      .Button {
+        &-control {
+          width: 28px;
+          height: 28px;
+          padding: 2px;
+        }
+      }
+    }
+
+    .Button {
+      &-control {
+        padding: 2px 12px;
+        height: 28px;
+        &-title {
+          font-size: 13px;
+        }
+
+        &-icon {
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+
+  &.small-middle {
+    &.reverse {
+      .Button-control-icon {
+        margin-right: 0;
+        margin-left: 8px;
+      }
+    }
+
+    .Button {
+      &-control {
+        height: 32px;
+        padding: 2px 24px;
+        display: block;
+        @media (max-width: 991px) {
+          height: 40px;
+
+          &-title {
+            font-size: 13px;
+            font-weight: 400;
+          }
+        }
+
+        &-title {
+          font-size: 15px;
+          font-weight: 500;
+        }
+
+        &-icon {
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+
+  &.middle {
+    &.only-icon {
+      .Button {
+        &-control {
+          width: 38px;
+          height: 38px;
+          padding: 2px;
+
+          &-icon {
+            width: 25px;
+            height: 25px;
+          }
+        }
+      }
+    }
+
+    .Button {
+      &-control {
+        height: 38px;
+        padding: 2px 15px;
+
+        &-title {
+          font-size: 13px;
+        }
+
+        &-icon {
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+
+  &.only-icon {
+    .Button {
+      &-control {
+        &-icon {
+          margin: 0;
+        }
+      }
+    }
+  }
+}

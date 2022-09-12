@@ -1,0 +1,65 @@
+.Checkbox {
+  position: relative;
+  display: block;
+
+  &.single {
+    .Checkbox {
+      &-wrapper {
+        margin-right: 0px;
+      }
+    }
+  }
+
+  &.gray {
+    .Checkbox {
+      &-wrapper {
+        background: color(wild-sand);
+        border-color: color(alto);
+      }
+    }
+  }
+
+  &-input {
+    position: absolute;
+    z-index: 2;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+
+    &:checked + .Checkbox {
+      &-wrapper {
+        background: color(azure-radiance);
+        border-color: color(azure-radiance);
+
+        img {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &-wrapper {
+    width: 16px;
+    height: 16px;
+    background: color(white);
+    border: 1px solid color(ghost);
+    transition: $common-transition;
+    display: flex;
+    border-radius: 3px;
+    padding: 2px;
+    margin-right: 8px;
+
+    img {
+      width: 100%;
+      margin: auto;
+      opacity: 0;
+      transition: $common-transition;
+    }
+  }
+
+  &-label {
+    font-size: 13px;
+    color: color(emperor);
+  }
+}

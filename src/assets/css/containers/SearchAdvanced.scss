@@ -1,0 +1,110 @@
+.SearchAdvanced {
+  .CardWithTab {
+    &-header {
+      margin-bottom: 0;
+
+      @media (max-width: 991px) {
+        margin-bottom: 12px;
+      }
+    }
+  }
+
+  &-item {
+    &-row {
+      margin: 0 -8px;
+
+      &:first-child {
+        @media (max-width: 991px) {
+
+          .Select,
+          .Checkbox {
+            flex: 0 0 100%;
+            max-width: 100%;
+
+            &:not(:last-child) {
+              margin-bottom: 8px;
+            }
+          }
+        }
+      }
+
+      @media (max-width: 991px) {
+        margin: 0;
+
+        &:not(.auto) {
+
+          .SearchAdvanced-item-col {
+            flex: 0 0 100% !important;
+            max-width: 100% !important;
+          }
+        }
+
+        &.auto {
+          margin-bottom: -8px;
+
+          .Button {
+            margin: 0 8px 8px 0;
+          }
+        }
+      }
+
+      &.line-bottom {
+        border-bottom: 1px solid color(mercury);
+      }
+    }
+
+    &-col {
+      position: relative;
+      padding: 12px 8px;
+
+      @media (max-width: 991px) {
+        padding: 8px 0;
+
+        &.border {
+          &::before {
+            display: none;
+          }
+        }
+      }
+
+      &.three {
+        flex: 0 0 calc(100% / 3);
+        max-width: calc(100% / 3);
+
+        .Input {
+          flex: 1;
+        }
+      }
+
+      &.border {
+        &::before {
+          position: absolute;
+          right: 0;
+          top: 50%;
+          width: 1px;
+          height: 42px;
+          background: color(mercury);
+          content: '';
+          transform: translateY(-50%);
+        }
+      }
+
+      &.expand {
+        flex: 1;
+      }
+    }
+  }
+
+  .Input {
+    &.small-middle {
+      .Input {
+        &-control {
+          border-radius: 0;
+          padding: 2px 6px;
+          border-bottom: 1px dashed color(black);
+          color: color(azure-radiance);
+        }
+      }
+    }
+  }
+}
