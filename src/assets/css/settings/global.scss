@@ -54,6 +54,9 @@ a.logo.logo-black{
   font-size: 1.5rem;
   line-height: 1.5;
   text-transform: initial;
+  table,img{
+    width: 100%;
+  }
 }
 p.description-common{
   color: color(color-light);
@@ -174,6 +177,11 @@ $flags: (
     min-width: unset;
     margin: 0;
   }
+  .flag-images{
+    img{
+      width: 16px;
+    }
+  }
 }
 .label-success {
   background-color: #5cb85c;
@@ -245,4 +253,7 @@ img{
 }
 .textarea-medium{
   font-size: 1.5rem;
+}
+.Contacts{
+  font-size: 1.8rem;
 }

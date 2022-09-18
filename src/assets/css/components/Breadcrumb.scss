@@ -3,7 +3,7 @@
   background: color(white);
   border-radius: 5px;
   margin-bottom: 15px;
-
+  display: flex;
   @media (max-width: 991px) {
     border-bottom: 1px solid color(alto);
     border-radius: 0;
@@ -11,29 +11,32 @@
   }
 
   &-item {
-    font-size: 13px;
+    font-size: 14px;
     color: color(mine-shaft);
     transition: $common-transition;
     white-space: nowrap;
-
-    a {
-      font-size: 13px;
-      color: color(mine-shaft);
-      transition: $common-transition;
-    }
-
-    &.hightlight,
-    &:hover {
-      color: color(azure-radiance);
-
-      a {
-        color: color(azure-radiance);
+    &.active{
+      a{
+        color: color(orange);
+        text-decoration: none;
+        &:hover{
+          color: color(orange);
+        }
+      }
+      &::before{
+        content: "/\00a0";
+        padding: 0 5px;
+        color: #ccc;
       }
     }
 
-    &.separator {
-      display: block;
-      margin: 0 4px;
+    a {
+      font-size: 14px;
+      color: color(mine-shaft);
+      transition: $common-transition;
+      &:hover{
+        color: color(orange);
+      }
     }
   }
 }

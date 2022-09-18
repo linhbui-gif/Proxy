@@ -70,23 +70,17 @@ block pages
                                 td
                                     b IPv6
                                 td.small
-                                    +CountryContainerList({isNumber: true,array: CountryList})
+                                    +CountryContainerList({isNumber: true,array: CountryList, hasImage:false})
                             tr
                                 td
                                     b IPv4
                                 td.small
-                                    .order-free-item(title='Moldova (Republica Moldova)')
-                                        span.flag.md
-                                        div
-                                            span.label.label-default 1
+                                    +CountryContainerList({isNumber: true,array: CountryList, hasImage:true})
                             tr
                                 td
                                     b Shrd
                                 td.small
-                                    .order-free-item(title='Canada')
-                                        span.flag.ca
-                                        div
-                                            span.label.label-default 1
+                                    +CountryContainerList({isNumber: true,array: CountryList, hasImage:true})
             .alert.alert-success.custom-font-size.color-green
                 | Our proxies are provided exclusively per customer (except Shared). Are not public - where anyone can buy access to them. Buying IP addresses from us, you can be sure that only you use them in the purposes.
             .alert.alert-warning.custom-font-size.color-orange

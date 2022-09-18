@@ -1,0 +1,23 @@
+extends includes/layouts/Layout.pug
+
+block pages
+    .Faq.pt-5.pb-5
+        .container
+            h1.title-component-h1 GENERAL ISSUES
+            +ListGroupComponent({array: listFaq, styleLinkClass: 'orange'})
+            .content-ckeditor
+                each item in [1,2,3,4,5]
+                    .Faq-items
+                        .Faq-items-head Why use a proxy?
+                        .Faq-items-body
+                            strong Changing IP and DNS
+                            |  - You can hide your real IP address and DNS just by connecting a proxy;
+                            br
+                            strong Anonymity in the network
+                            |  - Anonymous and secure use of the Internet, hiding Internet activity from your provider;
+                            br
+                            strong Bypass locks
+                            |  - Removing service restrictions by IP, GEO data, port and protocol. Your internet becomes free;
+                            br
+                            strong Protection from hackers
+                            |  - Attacks by hackers fall on our proxy server. Attackers will not be able to learn the real IP.

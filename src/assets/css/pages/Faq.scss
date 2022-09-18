@@ -1,0 +1,27 @@
+.Faq{
+  .list-item-group{
+  list-style: disc;
+    padding-left: 4rem;
+    li{
+      margin-bottom: 1rem;
+      a{
+        display: inline-block;
+        border-bottom: 1px dotted;
+        text-decoration: none;
+      }
+    }
+}
+
+  &-items{
+
+    &-head{
+      color: color(orange);
+      font-size: 25px;
+      font-weight: 700;
+    }
+    &-body{
+      padding: 10px 0;
+      line-height: 1.65;
+    }
+  }
+}

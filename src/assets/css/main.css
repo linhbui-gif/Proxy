@@ -413,6 +413,8 @@ a.logo.logo-black {
   font-size: 1.5rem;
   line-height: 1.5;
   text-transform: initial; }
+  .content-ckeditor table, .content-ckeditor img {
+    width: 100%; }
 
 p.description-common {
   color: var(--color-light);
@@ -510,6 +512,8 @@ form input[type="text"], form input[type="number"], form input[type="tel"], form
     border: unset;
     min-width: unset;
     margin: 0; }
+  .order-free-item .flag-images img {
+    width: 16px; }
 
 .label-success {
   background-color: #5cb85c; }
@@ -567,6 +571,9 @@ img.circle {
 
 .textarea-medium {
   font-size: 1.5rem; }
+
+.Contacts {
+  font-size: 1.8rem; }
 
 .Button-control {
   position: relative;
@@ -814,6 +821,38 @@ img.circle {
 .Button.only-icon .Button-control-icon {
   margin: 0; }
 
+.Breadcrumb {
+  padding: 10px 12px;
+  background: var(--white);
+  border-radius: 5px;
+  margin-bottom: 15px;
+  display: flex; }
+  @media (max-width: 991px) {
+    .Breadcrumb {
+      border-bottom: 1px solid var(--alto);
+      border-radius: 0;
+      margin-bottom: 0 !important; } }
+  .Breadcrumb-item {
+    font-size: 14px;
+    color: var(--mine-shaft);
+    transition: 0.3s ease;
+    white-space: nowrap; }
+    .Breadcrumb-item.active a {
+      color: var(--orange);
+      text-decoration: none; }
+      .Breadcrumb-item.active a:hover {
+        color: var(--orange); }
+    .Breadcrumb-item.active::before {
+      content: "/\00a0";
+      padding: 0 5px;
+      color: #ccc; }
+    .Breadcrumb-item a {
+      font-size: 14px;
+      color: var(--mine-shaft);
+      transition: 0.3s ease; }
+      .Breadcrumb-item a:hover {
+        color: var(--orange); }
+
 .list-item-group {
   margin-bottom: 0; }
   .list-item-group.list-style-disc {
@@ -834,7 +873,7 @@ img.circle {
     .list-item-group .list-item .list-item-link:hover {
       text-decoration: none; }
 
-.Card-component.vertical .Card-component-left-image {
+.Card-component.has-background .Card-component-left-image {
   display: block;
   width: 64px;
   height: 64px;
@@ -843,16 +882,36 @@ img.circle {
   overflow: hidden;
   background-position: -66px -195px; }
 
-.Card-component.vertical .Card-component-body-content {
+.Card-component.has-background .Card-component-body-content {
   text-align: center; }
 
-.Card-component.vertical .Card-component-body-content-description {
+.Card-component.has-background .Card-component-body-content-description {
   margin: 1rem 0; }
 
-.Card-component.vertical .Card-component-body-content-title {
+.Card-component.has-background .Card-component-body-content-title {
   color: var(--black);
   font-size: 1.7rem; }
-  .Card-component.vertical .Card-component-body-content-title a {
+  .Card-component.has-background .Card-component-body-content-title a {
+    color: var(--black);
+    text-decoration: none;
+    font-size: 1.7rem; }
+
+.Card-component.has-images .Card-component-left-image {
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 2rem auto; }
+
+.Card-component.has-images .Card-component-body-content {
+  text-align: center; }
+
+.Card-component.has-images .Card-component-body-content-description {
+  margin: 1rem 0; }
+
+.Card-component.has-images .Card-component-body-content-title {
+  color: var(--black);
+  font-size: 1.7rem; }
+  .Card-component.has-images .Card-component-body-content-title a {
     color: var(--black);
     text-decoration: none;
     font-size: 1.7rem; }
@@ -1118,3 +1177,65 @@ img.circle {
     margin: 0; }
   .website-ip-support .form-check-ip span#inputGroup-sizing-lg {
     font-size: 1.6rem; }
+
+.Faq .list-item-group {
+  list-style: disc;
+  padding-left: 4rem; }
+  .Faq .list-item-group li {
+    margin-bottom: 1rem; }
+    .Faq .list-item-group li a {
+      display: inline-block;
+      border-bottom: 1px dotted;
+      text-decoration: none; }
+
+.Faq-items-head {
+  color: var(--orange);
+  font-size: 25px;
+  font-weight: 700; }
+
+.Faq-items-body {
+  padding: 10px 0;
+  line-height: 1.65; }
+
+.MyIp .myip_server_head {
+  margin: 20px 0;
+  color: #888;
+  font-size: 19px; }
+
+.MyIp .inline-dotted {
+  position: relative;
+  padding: 0;
+  margin-bottom: 8px; }
+  .MyIp .inline-dotted dt {
+    font-size: 1.5rem;
+    position: relative;
+    float: left;
+    z-index: 1;
+    background: #fff;
+    padding: 0;
+    padding-right: 5px;
+    font-weight: 700; }
+  .MyIp .inline-dotted dd {
+    font-size: 1.5rem;
+    position: relative;
+    margin: 0;
+    margin-left: 150px;
+    z-index: 1;
+    background: #fff;
+    padding-left: 5px;
+    word-wrap: break-word; }
+  .MyIp .inline-dotted:before {
+    content: " ";
+    position: absolute;
+    height: 0;
+    border-bottom: 1px dotted #ccc;
+    left: 0;
+    right: 0;
+    top: 0.6em; }
+  .MyIp .inline-dotted:after {
+    content: " ";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+    zoom: 1; }

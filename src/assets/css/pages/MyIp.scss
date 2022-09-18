@@ -1,0 +1,49 @@
+.MyIp{
+  .myip_server_head {
+    margin: 20px 0;
+    color: #888;
+    font-size: 19px;
+  }
+  .inline-dotted{
+    position: relative;
+    padding: 0;
+    margin-bottom: 8px;
+    dt{
+      font-size: 1.5rem;
+      position: relative;
+      float: left;
+      z-index: 1;
+      background: #fff;
+      padding: 0;
+      padding-right: 5px;
+      font-weight: 700;
+    }
+    dd{
+      font-size: 1.5rem;
+      position: relative;
+      margin: 0;
+      margin-left: 150px;
+      z-index: 1;
+      background: #fff;
+      padding-left: 5px;
+      word-wrap: break-word;
+    }
+    &:before{
+      content: " ";
+      position: absolute;
+      height: 0;
+      border-bottom: 1px dotted #ccc;
+      left: 0;
+      right: 0;
+      top: 0.6em;
+    }
+    &:after{
+      content: " ";
+      visibility: hidden;
+      display: block;
+      height: 0;
+      clear: both;
+      zoom: 1;
+    }
+  }
+}

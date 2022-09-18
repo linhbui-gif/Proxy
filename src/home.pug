@@ -15,14 +15,20 @@ block pages
         h1.title-component-h1.text-center OUR ADVANTAGES
         .container
             .row
-                each item in [1,2,3,4,5,6,7,8]
+                each item in [1,2,3,4,5,6,7]
                     .col-lg-3.col-6
                         +CardComponent({
-                            className:'vertical',
+                            className:' has-images',
                             title:'LOW PRICES',
-                            src: '',
+                            src: './assets/images/sync-icon.png',
                             desc: 'We have some of the lowest prices in the market.'
                         })
+                .col-lg-3.col-6
+                    +CardComponent({
+                        className: ' has-background',
+                        title: 'LOW PRICES',
+                        desc: 'We have some of the lowest prices in the market.'
+                    })
                 .col-12.text-center
                     p.more
                       | MORE THAN

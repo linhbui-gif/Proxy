@@ -1,11 +1,25 @@
-mixin CountryContainerList({array = [], isNumber, className})
+mixin CountryContainerList({array = [], isNumber, className, hasImage})
     if isNumber
-        each item in array
-            div(class=`order-free-item ${className}`)
-                  .flag(title=`${item.title}` class=`${item.country}`)
-                  div
-                       span.label(class=`${item.status ? item.status : ''}`)=item.number
+        if hasImage
+            each item in array
+                div(class=`order-free-item ${className ? className : ''}`)
+                    .flag-images(title=`${item.title}`)
+                        img(src=`${item.src}` alt=`${item.title}`)
+                    div
+                        span.label(class=`${item.status ? item.status : ''}`)=item.number
+        else
+            each item in array
+                div(class=`order-free-item ${className ? className : ''}`)
+                      .flag(title=`${item.title}` class=`${item.country}`)
+                      div
+                           span.label(class=`${item.status ? item.status : ''}`)=item.number
     else
-        each item in array
-            div(class=`order-free-item ${className}`)
-                .flag(title=`${item.title}` class=`${item.country}`)
+        if hasImage
+            each item in array
+                div(class=`order-free-item ${className ? className : ''}`)
+                    .flag-images(title=`${item.title}`)
+                        img(src=`${item.src}` alt=`${item.title}`)
+        else
+            each item in array
+                div(class=`order-free-item ${className ? className : ''}`)
+                    .flag(title=`${item.title}` class=`${item.country}`)
