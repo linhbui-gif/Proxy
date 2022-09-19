@@ -257,3 +257,12 @@ img{
 .Contacts{
   font-size: 1.8rem;
 }
+.blog-tag{
+   a{
+     text-decoration: none;
+     &:hover{
+       color: color(orange);
+       text-decoration: none;
+     }
+   }
+}

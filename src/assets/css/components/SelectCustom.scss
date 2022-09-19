@@ -1,0 +1,122 @@
+$accent: #ff8000;
+$second: #ccc;
+$text: #111;
+$background: #fff;
+.Select-custom {
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  & .dropdown {
+    transition: 0.2s;
+    z-index: 1;
+    overflow: hidden;
+    background: $background;
+    box-sizing: border-box;
+    color: $text;
+    padding: 8px;
+    font-family: sans-serif;
+    font-size: 14px; //use it to control Height
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    border: 1px solid $second;
+    border-radius: 5px;
+    img{
+      margin-right: 10px;
+    }
+    &::selection {
+      background: transparent;
+    }
+    &:after {
+      transition: 0.1s;
+      display: initial;
+      color: $second;
+      cursor: pointer;
+      position: absolute;
+      right: 8px;
+      content: "▼";
+      top: 50%;
+      transform: translateY(-50%);
+      font-weight: 900;
+    }
+    &.active {
+      color: #fff;
+      background: var(--orange);
+      border-color: var(--orange);
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+      &:after {
+        color: #fff;
+        transform:translateY(-50%) rotateX(180deg);
+        transition: 0.1s;
+      }
+    }
+  }
+  & .dropdown-itemsWrapper {
+    top: calc(100% - 1px);
+    opacity: 1;
+    z-index: 1;
+    color: $text;
+    font-family: sans-serif;
+    font-size: 18px;
+    transition: 0.2s;
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    height: 177px;
+    overflow-y: auto;
+    //border: 1px solid $accent;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    margin: 0;
+    padding: 0;
+    &::-webkit-scrollbar {
+      background: $background;
+      width: 8px;
+      border-bottom-right-radius: 4px;
+    }
+    &::-webkit-scrollbar-track {
+      padding-left:1px;
+      border-left: 1px solid $accent;
+      -webkit-box-shadow: none;
+    }
+    &::-webkit-scrollbar-thumb {
+      box-sizing: border-box;
+      position:absolute;
+      margin-left:1px;
+      background: $second;
+      -webkit-box-shadow: none;
+    }
+    &.inactive {
+      border: 0px;
+      opacity: 0;
+      height: 0px;
+    }
+    & li {
+      margin: 0px;
+      transition: 0.1s;
+      box-shadow: 0 3px 5px $second;
+      cursor: pointer;
+      list-style: none;
+      padding: 8px 10px;
+      background: $background;
+      width: auto;
+      height: auto;
+      border-bottom: 1px solid $second;
+      border-top: none;
+      font-size: 14px;
+      text-align: left;
+      img{
+        margin-right: 10px;
+      }
+      &::selection {
+        background: transparent;
+      }
+      &:hover {
+        background: var(--orange);
+        color: #fff;
+      }
+    }
+  }
+}

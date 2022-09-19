@@ -1,5 +1,10 @@
 .Card{
   &-component{
+    &.related-post{
+.Card-component-body{
+  padding: 1rem;
+}
+    }
     &.has-background{
       .Card-component-left-image{
         display: block;

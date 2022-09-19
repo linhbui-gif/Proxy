@@ -1,10 +1,15 @@
 (function( $ ) {
     $.fn.initDropdown = function (option) {
 
+        //ACD v - 1.0.1                                                   //
+        //this is a simple plugin ,that writen by ANOD. hope you enjoy it!//
+        //also u can support me : https://www.donationalerts.com/r/anod   //
+        //default config                                                  //
         var config = $.extend({
             default_value:'Pick color', // Свое значение.
             default_element: 1, //0 если не надо //Выбрать элемент под номером в качестве значения по умолчанию
         },option);
+
 
         var dd = this.find('.dropdown');
         var items = this.find('li');
@@ -15,6 +20,7 @@
             dd.html(config.default_value);
             input.attr('value','null');
             items_list.removeClass('d-none').addClass('inactive');
+
             if(config.default_element != 0){
                 dd.html(items[config.default_element-1].innerHTML);
                 input.attr('value','1');
@@ -60,23 +66,5 @@
         }
     }
 })(jQuery);
-let dropdownWrapper = $('.dropdownWrapper');
-if(dropdownWrapper.length > 0){
-    $('.dropdownWrapper').initDropdown();
-}
 
-window.onload = () => {
-   navigationMobile.init();
-};
-let navigationMobile = {
-  init:function (){
-    this.toggleShow();
-  },
-  toggleShow:function (){
-      const buttonBar = document.querySelector('.Navigation-item .button-bars');
-      const listMenu  = document.querySelector('.Navigation-item .list-item-group');
-      buttonBar.addEventListener('click', () => {
-        listMenu.classList.toggle('active');
-      })
-  }
-}
+$('.dropdownWrapper').initDropdown();

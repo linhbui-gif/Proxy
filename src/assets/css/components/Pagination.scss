@@ -10,14 +10,15 @@
       }
 
       &:hover a {
-        background: color(science-blue-alpha-01);
-        border-color: color(science-blue-alpha-03);
+        background: color(orange);
+        border-color: color(orange);
+        color: white;
       }
 
       &:active,
       &.active {
         a {
-          background: color(azure-radiance);
+          background: color(orange);
           color: color(white)
         }
       }
@@ -26,14 +27,16 @@
     &.btn {
       &:hover {
         a {
-          background: color(science-blue-alpha-01);
-          border-color: color(science-blue-alpha-03);
+          background: color(orange);
+          border-color: color(orange);
+          color: white;
         }
       }
 
       &:active {
         a {
           background: color(azure-radiance);
+          color: white;
           border-color: color(azure-radiance);
         }
 
