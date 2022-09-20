@@ -922,6 +922,11 @@ img.circle {
 .Card-component.related-post .Card-component-body {
   padding: 1rem; }
 
+.Card-component.related-post .Card-component-left-image a img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover; }
+
 .Card-component.has-background .Card-component-left-image {
   display: block;
   width: 64px;
