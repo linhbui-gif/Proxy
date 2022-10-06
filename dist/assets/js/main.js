@@ -2,7 +2,7 @@
     $.fn.initDropdown = function (option) {
 
         var config = $.extend({
-            default_value:'Pick color', // Свое значение.
+            default_value:'Choose Country', // Свое значение.
             default_element: 1, //0 если не надо //Выбрать элемент под номером в качестве значения по умолчанию
         },option);
 
@@ -10,13 +10,13 @@
         var items = this.find('li');
         var input = this.find('input');
         var items_list = this.find('.dropdown-itemsWrapper');
-
         if(dd){
             dd.html(config.default_value);
             input.attr('value','null');
             items_list.removeClass('d-none').addClass('inactive');
             if(config.default_element != 0){
-                dd.html(items[config.default_element-1].innerHTML);
+                // dd.html(items[config.default_element-1].innerHTML);
+                console.log('input', input.attr('value','1'))
                 input.attr('value','1');
             }
 
