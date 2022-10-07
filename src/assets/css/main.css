@@ -1139,8 +1139,10 @@ img.circle {
             font-size: 12px; } }
 
 .Navigation {
-  background: var(--orange);
-  padding: 10px 0; }
+  background: var(--orange); }
+  @media (max-width: 991px) {
+    .Navigation {
+      padding: 10px 0; } }
   .Navigation-item .button-bars {
     display: none; }
     @media (max-width: 991px) {
@@ -1163,18 +1165,54 @@ img.circle {
       @media (max-width: 991px) {
         .Navigation .list-item-group.horizon.active {
           max-height: 100vh; } }
-      .Navigation .list-item-group.horizon li {
-        margin-left: 2rem; }
+      .Navigation .list-item-group.horizon .list-item {
+        margin-left: 2rem;
+        position: relative;
+        padding: 10px 0; }
         @media (max-width: 991px) {
-          .Navigation .list-item-group.horizon li {
+          .Navigation .list-item-group.horizon .list-item {
             width: 100%;
             margin: 0; } }
-        .Navigation .list-item-group.horizon li a {
+        .Navigation .list-item-group.horizon .list-item .has-dropdown-list {
+          position: absolute;
+          width: 200px;
+          left: 0;
+          background: white;
+          top: 100%;
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+          z-index: 9;
+          transition: .5s;
+          transform: translateY(20%);
+          opacity: 0;
+          visibility: hidden; }
+          @media (max-width: 991px) {
+            .Navigation .list-item-group.horizon .list-item .has-dropdown-list {
+              position: static;
+              width: 100%;
+              opacity: 1;
+              visibility: visible;
+              transform: translateY(0%);
+              background: unset;
+              box-shadow: unset;
+              max-height: 0;
+              overflow: hidden; }
+              .Navigation .list-item-group.horizon .list-item .has-dropdown-list.show {
+                max-height: 100vh;
+                padding-left: 20px; }
+              .Navigation .list-item-group.horizon .list-item .has-dropdown-list .list-item .list-item-link {
+                color: white !important; } }
+          .Navigation .list-item-group.horizon .list-item .has-dropdown-list .list-item .list-item-link {
+            color: black; }
+        .Navigation .list-item-group.horizon .list-item.has-dropdown:hover .has-dropdown-list {
+          transform: translateY(0%);
+          opacity: 1;
+          visibility: visible; }
+        .Navigation .list-item-group.horizon .list-item .list-item-link {
           font-size: 14px;
           color: var(--white);
           text-transform: capitalize; }
           @media (max-width: 991px) {
-            .Navigation .list-item-group.horizon li a {
+            .Navigation .list-item-group.horizon .list-item .list-item-link {
               padding: .5rem 0;
               display: block;
               width: 100%; } }

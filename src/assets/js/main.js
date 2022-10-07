@@ -2,7 +2,7 @@
     $.fn.initDropdown = function (option) {
 
         var config = $.extend({
-            default_value:'Choose Country', // Свое значение.
+            default_value:'Chọn Quốc gia', // Свое значение.
             default_element: 1, //0 если не надо //Выбрать элемент под номером в качестве значения по умолчанию
         },option);
 
@@ -64,13 +64,14 @@ let dropdownWrapper = $('.dropdownWrapper');
 if(dropdownWrapper.length > 0){
     $('.dropdownWrapper').initDropdown();
 }
-
+(function( $ ) {
 window.onload = () => {
    navigationMobile.init();
 };
 let navigationMobile = {
   init:function (){
     this.toggleShow();
+    this.showDropdown();
   },
   toggleShow:function (){
       const buttonBar = document.querySelector('.Navigation-item .button-bars');
@@ -78,5 +79,14 @@ let navigationMobile = {
       buttonBar.addEventListener('click', () => {
         listMenu.classList.toggle('active');
       })
-  }
+  },
+    showDropdown:function (){
+      const dropdownListButton = $('.has-dropdown');
+        $.each(dropdownListButton,function (item,value){
+            $(this).on('click', function (){
+                $(this).find('.has-dropdown-list').toggleClass('show')
+            })
+        })
+    }
 }
+})(jQuery);
